@@ -1,11 +1,12 @@
 package kdg.be.simulator.generator;
 
 import kdg.be.simulator.models.CameraMessage;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-@Component
+
 public class FileGenerator implements IMessageGenerator {
 
     @Override

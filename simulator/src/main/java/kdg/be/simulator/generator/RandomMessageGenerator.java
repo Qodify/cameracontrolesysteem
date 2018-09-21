@@ -9,45 +9,39 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.Random;
 
+
 public class RandomMessageGenerator implements IMessageGenerator {
     private Random r;
     private int randomIdBound;
-    private StringBuilder randomLicensePlate;
+    private String randomLicensePlate;
 
     //TODO: instelbare bound voor id maar hoe om te zetten tot bean?
     //mag een javabean hier een geparametriseerde construcotr hebben?
     public RandomMessageGenerator(/*int rIdBound*/) {
         r = new Random();
-        randomLicensePlate = new StringBuilder();
+
     }
 
-    public void setRandomIdBound(int randomIdBound) {
+    void setRandomIdBound(int randomIdBound) {
         this.randomIdBound = randomIdBound;
     }
 
     @Override
     public CameraMessage generate() {
-        randomLicensePlate
-                .append(r.nextInt(9) + 1)
-                .append('-')
-                .append(rndChar())
-                .append(rndChar())
-                .append(rndChar())
-                .append('-')
-                .append(r.nextInt(9) + 1)
-                .append(r.nextInt(9) + 1)
-                .append(r.nextInt(9) + 1);
-        return new CameraMessage(r.nextInt(randomIdBound),
-                    randomLicensePlate.toString(), LocalDateTime.now());
+        randomLicensePlate = String.format("%d-%s%s%s-%d%d%d", r.nextInt(9) + 1, rndChar(), rndChar(), rndChar(),
+                r.nextInt(9) + 1, r.nextInt(9) + 1, r.nextInt(9) + 1);
+
+        return new CameraMessage(4,
+                randomLicensePlate.toString(), LocalDateTime.now());
     }
 
-    public char rndChar() {
+    private char rndChar() {
         char r_3_Char = (char) (65 + r.nextInt(25));
         return r_3_Char;
     }
 
     @Scheduled(fixedRate = 5000)
-    public void doGenerate(){
+    public void doGenerate() {
         System.out.println(generate());
 
     }

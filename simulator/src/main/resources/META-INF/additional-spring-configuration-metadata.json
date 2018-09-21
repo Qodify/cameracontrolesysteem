@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "MessageGeneratorType",
+      "type": "java.lang.String",
+      "description": "Description for MessageGeneratorType."
+    }
+  ]
+}

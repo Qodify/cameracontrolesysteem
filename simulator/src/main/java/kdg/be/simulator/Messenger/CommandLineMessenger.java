@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
-public class CommandLineIMessenger implements IMessenger {
+public class CommandLineMessenger implements IMessenger {
 
 
     private final IMessageGenerator messageGenerator;  //constructorInjection in combinatie van de test. Nu is autowired niet meer nodig
@@ -17,14 +16,14 @@ public class CommandLineIMessenger implements IMessenger {
     //mist de dependencyinjection
 
     @Autowired
-    public CommandLineIMessenger(@Qualifier("fileGenerator") IMessageGenerator messageGenerator) {
+    public CommandLineMessenger(@Qualifier("fileGenerator") IMessageGenerator messageGenerator) {
         this.messageGenerator = messageGenerator;
     }
 
 
-
     @Override
-    public void sendMessage(CameraMessage cameraMessage) {
+    public void sendMessage() {
+        messageGenerator.generate();
         System.out.println();
     }
 }

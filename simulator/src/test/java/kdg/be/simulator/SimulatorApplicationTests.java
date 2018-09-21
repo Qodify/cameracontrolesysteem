@@ -1,7 +1,7 @@
 package kdg.be.simulator;
 
+import kdg.be.simulator.generator.IMessageGenerator;
 import kdg.be.simulator.models.CameraMessage;
-import kdg.be.simulator.generator.MessageGenerator;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +15,7 @@ public class SimulatorApplicationTests {
 
 
     @Autowired //dit is FieldInjection:
-    private MessageGenerator messageGenerator;
+    private IMessageGenerator messageGenerator;
 
     @Test
     public void testMessageGenerator(){
