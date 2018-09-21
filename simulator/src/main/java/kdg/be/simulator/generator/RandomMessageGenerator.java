@@ -2,14 +2,16 @@ package kdg.be.simulator.generator;
 
 import kdg.be.simulator.models.CameraMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Random;
-
-
+@Component
+@ConditionalOnProperty(name = "MessageGeneratorType", havingValue = "random")
 public class RandomMessageGenerator implements IMessageGenerator {
     private Random r;
     private int randomIdBound;
@@ -17,13 +19,9 @@ public class RandomMessageGenerator implements IMessageGenerator {
 
     //TODO: instelbare bound voor id maar hoe om te zetten tot bean?
     //mag een javabean hier een geparametriseerde construcotr hebben?
-    public RandomMessageGenerator(/*int rIdBound*/) {
+    public RandomMessageGenerator(@Value("${rIdbound:1000}") Integer rIdBound) {
         r = new Random();
-
-    }
-
-    void setRandomIdBound(int randomIdBound) {
-        this.randomIdBound = randomIdBound;
+        randomIdBound=rIdBound;
     }
 
     @Override

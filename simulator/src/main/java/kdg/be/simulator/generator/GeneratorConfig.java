@@ -17,19 +17,4 @@ public class GeneratorConfig {
     //return new FileGenerator();
     //}
 
-    @ConditionalOnProperty(name = "MessageGeneratorType", havingValue = "random")
-    @Bean
-    public IMessageGenerator randomMessageGenerator() {
-        RandomMessageGenerator randomMessageGenerator = new RandomMessageGenerator();
-        randomMessageGenerator.setRandomIdBound(1000);
-        System.out.println("rmg");
-        return randomMessageGenerator;
-    }
-
-    @ConditionalOnProperty(name = "MessageGeneratorType", havingValue = "file")
-    @Bean
-    public IMessageGenerator fileGenerator() {
-        System.out.println("fg");
-        return new FileGenerator();
-    }
 }

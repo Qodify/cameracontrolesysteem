@@ -6,7 +6,8 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-
+@Component
+@ConditionalOnProperty(name = "MessageGeneratorType", havingValue = "file")
 public class FileGenerator implements IMessageGenerator {
 
     @Override
