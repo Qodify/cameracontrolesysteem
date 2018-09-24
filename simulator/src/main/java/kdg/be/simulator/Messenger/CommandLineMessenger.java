@@ -5,6 +5,8 @@ import kdg.be.simulator.generator.RandomMessageGenerator;
 import kdg.be.simulator.models.CameraMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.scheduling.config.FixedRateTask;
 import org.springframework.stereotype.Component;
 
 public class CommandLineMessenger implements IMessenger {
@@ -21,9 +23,10 @@ public class CommandLineMessenger implements IMessenger {
     }
 
 
+    @Scheduled(fixedRate = 5000)
     @Override
     public void sendMessage() {
         messageGenerator.generate();
-        System.out.println();
     }
+
 }

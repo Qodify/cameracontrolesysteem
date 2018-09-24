@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Random;
+
 @Component
 @ConditionalOnProperty(name = "MessageGeneratorType", havingValue = "random")
 public class RandomMessageGenerator implements IMessageGenerator {
@@ -21,7 +22,7 @@ public class RandomMessageGenerator implements IMessageGenerator {
     //mag een javabean hier een geparametriseerde construcotr hebben?
     public RandomMessageGenerator(@Value("${rIdbound:1000}") Integer rIdBound) {
         r = new Random();
-        randomIdBound=rIdBound;
+        randomIdBound = rIdBound;
     }
 
     @Override
@@ -29,18 +30,12 @@ public class RandomMessageGenerator implements IMessageGenerator {
         randomLicensePlate = String.format("%d-%s%s%s-%d%d%d", r.nextInt(9) + 1, rndChar(), rndChar(), rndChar(),
                 r.nextInt(9) + 1, r.nextInt(9) + 1, r.nextInt(9) + 1);
 
-        return new CameraMessage(4,
-                randomLicensePlate.toString(), LocalDateTime.now());
+        return new CameraMessage(randomIdBound, randomLicensePlate.toString(), LocalDateTime.now());
     }
 
     private char rndChar() {
-        char r_3_Char = (char) (65 + r.nextInt(25));
-        return r_3_Char;
+        return (char) (65 + r.nextInt(25));
     }
 
-    @Scheduled(fixedRate = 5000)
-    public void doGenerate() {
-        System.out.println(generate());
 
-    }
 }
