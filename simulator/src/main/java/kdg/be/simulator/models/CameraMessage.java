@@ -12,9 +12,9 @@ public class CameraMessage {
     //TODO: datum formatteren volgens dd-mm-yyyy
     public String toString() {
         return "CameraMessage{" +
-                "id=" + id +
-                ", licenseplate='" + licenseplate + '\'' +
-                ", timestamp=" + timestamp +
+                "id: " + id +
+                ", licenseplate: '" + licenseplate + '\'' +
+                ", timestamp: " + timestamp +
                 '}';
     }
 

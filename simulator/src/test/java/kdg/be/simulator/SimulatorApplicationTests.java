@@ -23,8 +23,8 @@ public class SimulatorApplicationTests {
     @Test
     public void testMessageGenerator(){
         CameraMessage cameraMessage = messageGenerator.generate();
-//        Assert.assertTrue(cameraMessage.getLicenseplate().equalsIgnoreCase());
-        assertThat(cameraMessage.getLicenseplate()).isEqualToIgnoringCase("1-ABC-123");
+//        Assert.assertTrue(cameraMessage.getLicenseplate().matches("^[0-9]-[A-Z]{3}-[0-9]{3}"));
+        assertThat(cameraMessage.getLicenseplate()).matches("^[0-9]-[A-Z]{3}-[0-9]{3}");
     }
 
 
