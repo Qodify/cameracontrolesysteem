@@ -7,7 +7,6 @@ public class CameraMessage {
     private String licenseplate;
     private LocalDateTime timestamp;
 
-
     @Override
     //TODO: datum formatteren volgens dd-mm-yyyy
     public String toString() {
@@ -28,23 +27,12 @@ public class CameraMessage {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getLicenseplate() {
         return licenseplate;
-    }
-
-    public void setLicenseplate(String licenseplate) {
-        this.licenseplate = licenseplate;
     }
 
     public LocalDateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
 }

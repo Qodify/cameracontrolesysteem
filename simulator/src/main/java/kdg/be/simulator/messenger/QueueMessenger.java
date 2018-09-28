@@ -1,4 +1,4 @@
-package kdg.be.simulator.Messenger;
+package kdg.be.simulator.messenger;
 
 import kdg.be.simulator.generator.IMessageGenerator;
 import kdg.be.simulator.models.CameraMessage;
@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 @ConditionalOnProperty(name = "MessengerType", havingValue = "QueueMessenger")
 public class QueueMessenger implements IMessenger {
 
-  private int frequency;
-
+  @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
   public QueueMessenger(IMessageGenerator messageGenerator) {
   }
 

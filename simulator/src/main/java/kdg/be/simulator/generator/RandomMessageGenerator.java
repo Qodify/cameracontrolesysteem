@@ -12,24 +12,39 @@ import java.util.Random;
 @ConditionalOnProperty(name = "MessageGeneratorType", havingValue = "random")
 public class RandomMessageGenerator implements IMessageGenerator {
   private Random r;
+  @Value("${rIdbound:1000}")
+  Integer rIdBound;
   private int randomIdBound;
   private String randomLicensePlate;
 
-  //TODO: instelbare bound voor id maar hoe om te zetten tot bean?
-  //mag een javabean hier een geparametriseerde construcotr hebben?
   public RandomMessageGenerator(@Value("${rIdbound:1000}") Integer rIdBound) {
     r = new Random();
-    randomIdBound = rIdBound;
+    this.randomIdBound = rIdBound;
   }
 
-  //TODO: moet een cameramessage deel zijn van een thread, of het geheel van cameramessages een algoritme
+  public int getRandomIdBound() {
+    return randomIdBound;
+  }
+
+  public void setRandomIdBound(int randomIdBound) {
+    this.randomIdBound = randomIdBound;
+  }
+
+  public String getRandomLicensePlate() {
+    return randomLicensePlate;
+  }
+
+  public void setRandomLicensePlate(String randomLicensePlate) {
+    this.randomLicensePlate = randomLicensePlate;
+  }
+
   @Override
   public CameraMessage generate() {
-    randomLicensePlate = String.format("%d-%s%s%s-%d%d%d", r.nextInt(9) + 1, rndChar(), rndChar(), rndChar(),
+    randomLicensePlate = String.format("%d-%s%s%s-%d%d%d",
+        r.nextInt(9) + 1, rndChar(), rndChar(), rndChar(),
         r.nextInt(9) + 1, r.nextInt(9) + 1, r.nextInt(9) + 1);
-    System.out.println(new CameraMessage(randomIdBound, randomLicensePlate.toString(), LocalDateTime.now()));
 
-    return new CameraMessage(randomIdBound, randomLicensePlate.toString(), LocalDateTime.now());
+    return new CameraMessage(r.nextInt(randomIdBound) + 1, randomLicensePlate, LocalDateTime.now());
   }
 
   private char rndChar() {
