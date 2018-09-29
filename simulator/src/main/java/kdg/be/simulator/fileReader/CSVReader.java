@@ -1,4 +1,4 @@
-package kdg.be.simulator;
+package kdg.be.simulator.fileReader;
 
 import kdg.be.simulator.models.CameraMessage;
 import org.apache.commons.jexl3.JxltEngine;
@@ -8,12 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MyReader {
+public class CSVReader {
   private static final char DEFAULT_SEPARATOR = ',';
   private static final char DEFAULT_QUOTE = '"';
   private List<CameraMessage> msgList;
 
-  public MyReader() {
+  public CSVReader() {
     this.msgList = new ArrayList<>();
   }
 

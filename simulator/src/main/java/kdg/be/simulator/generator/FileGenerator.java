@@ -1,12 +1,11 @@
 package kdg.be.simulator.generator;
 
-import kdg.be.simulator.MyReader;
+import kdg.be.simulator.fileReader.CSVReader;
 import kdg.be.simulator.models.CameraMessage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Component
@@ -17,14 +16,10 @@ public class FileGenerator implements IMessageGenerator {
 
   @Override
   public CameraMessage generate() {
+    CSVReader mr = new CSVReader();
 
-    MyReader mr = new MyReader();
-
-    return mr.ReadCSV(filePath).get(0);
+    List<CameraMessage> list = mr.ReadCSV(filePath);
+    return list.get(0);
   }
 
-  @Override
-  public List<CameraMessage> generateList() {
-    return null;
-  }
 }

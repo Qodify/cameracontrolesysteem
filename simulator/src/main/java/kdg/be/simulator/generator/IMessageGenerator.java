@@ -7,5 +7,4 @@ import java.util.List;
 public interface IMessageGenerator {
   CameraMessage generate();
 
-  List<CameraMessage> generateList();
 }

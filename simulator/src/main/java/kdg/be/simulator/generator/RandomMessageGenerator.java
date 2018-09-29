@@ -1,5 +1,6 @@
 package kdg.be.simulator.generator;
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import kdg.be.simulator.models.CameraMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
@@ -27,6 +30,23 @@ public class RandomMessageGenerator implements IMessageGenerator {
     this.randomIdBound = rIdBound;
   }
 
+
+  @Override
+  public CameraMessage generate() {
+    LOGGER.debug("generate message");
+    randomLicensePlate = String.format("%d-%s%s%s-%d%d%d",
+        r.nextInt(9) + 1, rndChar(), rndChar(), rndChar(),
+        r.nextInt(9) + 1, r.nextInt(9) + 1, r.nextInt(9) + 1);
+
+    return new CameraMessage(r.nextInt(randomIdBound) + 1, randomLicensePlate, LocalDateTime.now());
+
+  }
+
+  private char rndChar() {
+    return (char) (65 + r.nextInt(25));
+  }
+
+
   public int getRandomIdBound() {
     return randomIdBound;
   }
@@ -43,23 +63,5 @@ public class RandomMessageGenerator implements IMessageGenerator {
     this.randomLicensePlate = randomLicensePlate;
   }
 
-  @Override
-  public CameraMessage generate() {
-    LOGGER.debug("generate message");
-    randomLicensePlate = String.format("%d-%s%s%s-%d%d%d",
-        r.nextInt(9) + 1, rndChar(), rndChar(), rndChar(),
-        r.nextInt(9) + 1, r.nextInt(9) + 1, r.nextInt(9) + 1);
 
-    return new CameraMessage(r.nextInt(randomIdBound) + 1, randomLicensePlate, LocalDateTime.now());
-  }
-
-  @Override
-  public List<CameraMessage> generateList() {
-    return null;
-  }
-
-  private char rndChar() {
-    return (char) (65 + r.nextInt(25));
-  }
-  
 }
