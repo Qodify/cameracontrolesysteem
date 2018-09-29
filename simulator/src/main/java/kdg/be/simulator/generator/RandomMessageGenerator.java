@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Random;
 
 @Component
@@ -50,6 +51,11 @@ public class RandomMessageGenerator implements IMessageGenerator {
         r.nextInt(9) + 1, r.nextInt(9) + 1, r.nextInt(9) + 1);
 
     return new CameraMessage(r.nextInt(randomIdBound) + 1, randomLicensePlate, LocalDateTime.now());
+  }
+
+  @Override
+  public List<CameraMessage> generateList() {
+    return null;
   }
 
   private char rndChar() {

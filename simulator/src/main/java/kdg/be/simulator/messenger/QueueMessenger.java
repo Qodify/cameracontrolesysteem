@@ -1,5 +1,8 @@
 package kdg.be.simulator.messenger;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import kdg.be.simulator.generator.IMessageGenerator;
 import kdg.be.simulator.models.CameraMessage;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -21,6 +24,14 @@ public class QueueMessenger implements IMessenger {
 
   @Override
   public void sendMessage(CameraMessage message) {
-    rabbitTemplate.convertAndSend("MessageQueue", message.toString());
+    ObjectMapper objectMapper = new XmlMapper();
+    String xml = message.toString();
+    try {
+      xml = objectMapper.writeValueAsString(message.toString());
+    } catch (JsonProcessingException e) {
+      e.printStackTrace();
+    }
+
+    rabbitTemplate.convertAndSend("MessageQueue", xml);
   }
 }

@@ -9,14 +9,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimulatorController {
 
-  @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-  @Autowired
   private IMessageGenerator messageGenerator;
-
-  @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-  @Autowired
   private IMessenger messenger;
 
+  @Autowired
   @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
   public SimulatorController(IMessageGenerator messageGenerator, IMessenger messenger) {
     this.messageGenerator = messageGenerator;
