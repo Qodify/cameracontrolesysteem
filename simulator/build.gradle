@@ -38,6 +38,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-amqp")
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
     compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.0"
-    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.9.4'
 
 }

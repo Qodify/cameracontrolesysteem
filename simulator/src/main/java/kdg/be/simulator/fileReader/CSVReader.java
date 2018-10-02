@@ -2,12 +2,14 @@ package kdg.be.simulator.fileReader;
 
 import kdg.be.simulator.models.CameraMessage;
 import org.apache.commons.jexl3.JxltEngine;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@Component
 public class CSVReader {
   private static final char DEFAULT_SEPARATOR = ',';
   private static final char DEFAULT_QUOTE = '"';
