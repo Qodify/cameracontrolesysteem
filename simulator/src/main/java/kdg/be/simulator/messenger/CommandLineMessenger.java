@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
 @Component
-@ConditionalOnProperty(name = "MessengerType", havingValue = "CommandLineMessenger")
+@ConditionalOnProperty(name = "MessengerType", havingValue = "clm")
 public class CommandLineMessenger implements IMessenger {
 
   @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")

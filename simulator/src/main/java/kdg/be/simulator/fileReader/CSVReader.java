@@ -1,44 +1,48 @@
 package kdg.be.simulator.fileReader;
 
+import javafx.scene.Camera;
 import kdg.be.simulator.models.CameraMessage;
 import org.apache.commons.jexl3.JxltEngine;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 
 @Component
 public class CSVReader {
   private static final char DEFAULT_SEPARATOR = ',';
   private static final char DEFAULT_QUOTE = '"';
-  private List<CameraMessage> msgList;
+  private Scanner scanner;
 
   public CSVReader() {
-    this.msgList = new ArrayList<>();
   }
 
-  public List<CameraMessage> ReadCSV(String path) {
-
-    Scanner scanner = null;
-    try {
-      scanner = new Scanner(new File(path));
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();
-    }
-    while (scanner.hasNext()) {
-      List<String> line = parseLine(scanner.nextLine());
-      System.out.println(line.get(0));
-      System.out.println(line.get(1));
-      System.out.println(line.get(2));
-      var cm = new CameraMessage(Integer.parseInt(line.get(0)), line.get(1), Integer.parseInt(line.get(2)));
-      msgList.add(cm);
-    }
-    scanner.close();
-    return msgList;
+  public void Initialize() {
 
   }
+
+//  public CameraMessage GetCSVItem(String path) {
+//
+//
+//    try {
+//      scanner = new Scanner(new File(path));
+//      while (scanner.hasNext()) {
+//        List<String> line = parseLine(scanner.nextLine());
+//        return new CameraMessage(Integer.parseInt(line.get(0)), line.get(1), LocalDateTime.now().plusSeconds(Long.parseLong(line.get(2)) / 1000));
+//      }
+//    } catch (
+//        FileNotFoundException e) {
+//      e.printStackTrace();
+//    }
+//    scanner.close();
+//    return null;
+//  }
+
 
   public static List<String> parseLine(String cvsLine) {
     return parseLine(cvsLine, DEFAULT_SEPARATOR, DEFAULT_QUOTE);

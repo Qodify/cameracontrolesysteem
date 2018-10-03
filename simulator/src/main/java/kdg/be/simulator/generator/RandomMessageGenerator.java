@@ -50,15 +50,12 @@ public class RandomMessageGenerator implements IMessageGenerator {
   public int getRandomIdBound() {
     return randomIdBound;
   }
-
   public void setRandomIdBound(int randomIdBound) {
     this.randomIdBound = randomIdBound;
   }
-
   public String getRandomLicensePlate() {
     return randomLicensePlate;
   }
-
   public void setRandomLicensePlate(String randomLicensePlate) {
     this.randomLicensePlate = randomLicensePlate;
   }

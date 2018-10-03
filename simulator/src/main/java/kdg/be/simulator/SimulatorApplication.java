@@ -13,7 +13,6 @@ public class SimulatorApplication {
   public static void main(String[] args) {
     SpringApplication.run(SimulatorApplication.class, args);
 
-    //Cloud AMQP client
 
 
   }

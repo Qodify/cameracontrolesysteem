@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConditionalOnProperty(name = "MessengerType", havingValue = "QueueMessenger")
+@ConditionalOnProperty(name = "MessengerType", havingValue = "qm")
 public class QueueMessenger implements IMessenger {
 
   @Autowired

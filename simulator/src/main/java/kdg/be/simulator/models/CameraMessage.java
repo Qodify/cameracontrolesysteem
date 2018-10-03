@@ -39,11 +39,7 @@ public class CameraMessage {
     this.timestamp = timestamp;
   }
 
-  public CameraMessage(int id, String licenseplate, int delay) {
-    this.id = id;
-    this.licenseplate = licenseplate;
-    this.delay = delay;
-  }
+
 
   public int getId() {
     return id;
