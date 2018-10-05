@@ -2,18 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abcbd6f-3e25-4194-abd6-661c800e3081" name="Default Changelist" comment="Fixed #1.">
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/CameraMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/CameraPair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/EmissionZone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Fine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Offense.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/RoadSegment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/retrieval/Receiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/processor/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/fileReader/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/fileReader/CSVReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/processor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/processor/processor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/IMessageGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/IMessageGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/models/CameraMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/models/CameraMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/textfiles/overtredingen.csv" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/textfiles/overtredingen.csv" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/processor/.gradle/" />
     <ignored path="$PROJECT_DIR$/processor/build/" />
@@ -26,6 +31,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/processor$SimulatorApplication.ic" NAME="SimulatorApplication Coverage Results" MODIFIED="1538727853618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/processor">
@@ -51,7 +59,7 @@
     <session id="-1527166951">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -59,31 +67,33 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.45" value="1" />
+          <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="2" />
           <entry key="gitignore" value="4" />
-          <entry key="gradle" value="13" />
+          <entry key="gradle" value="15" />
           <entry key="iml" value="1" />
-          <entry key="java" value="81" />
+          <entry key="java" value="104" />
           <entry key="json" value="2" />
-          <entry key="properties" value="8" />
+          <entry key="properties" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSV" value="1" />
-          <entry key="Groovy" value="13" />
+          <entry key="Groovy" value="15" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="81" />
+          <entry key="JAVA" value="104" />
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Properties" value="8" />
+          <entry key="Properties" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -91,8 +101,8 @@
           <entry key="csv" value="1" />
           <entry key="dummy" value="10" />
           <entry key="gitignore" value="8" />
-          <entry key="gradle" value="116" />
-          <entry key="java" value="8409" />
+          <entry key="gradle" value="127" />
+          <entry key="java" value="8713" />
           <entry key="properties" value="333" />
           <entry key="txt" value="9" />
         </counts>
@@ -100,8 +110,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSV" value="1" />
-          <entry key="Groovy" value="116" />
-          <entry key="JAVA" value="8409" />
+          <entry key="Groovy" value="127" />
+          <entry key="JAVA" value="8713" />
           <entry key="PLAIN_TEXT" value="27" />
           <entry key="Properties" value="333" />
         </counts>
@@ -118,7 +128,59 @@
         <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+              <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/retrieval/Receiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="44" selection-start-line="44" selection-end-line="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processor/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#834#835#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/CameraMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -126,29 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/processor/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="30" column="69" lean-forward="true" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="406">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,60 +198,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java">
+        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="52" column="19" lean-forward="true" selection-start-line="52" selection-end-line="53" />
+            <state relative-caret-position="380">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#764#765#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/textfiles/overtredingen.csv">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.0.9.RELEASE/bf1c19aadae4724bfe7e9196652e649bb08a99c4/spring-context-5.0.9.RELEASE-sources.jar!/org/springframework/scheduling/support/ScheduledMethodRunnable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+            <state relative-caret-position="197">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/fileReader/CSVReader.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.0.9.RELEASE/bf1c19aadae4724bfe7e9196652e649bb08a99c4/spring-context-5.0.9.RELEASE-sources.jar!/org/springframework/scheduling/support/DelegatingErrorHandlingRunnable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="28" selection-start-line="28" selection-start-column="2" selection-end-line="43" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1242#1243#0" expanded="true" />
-                <element signature="e#1311#1312#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/IMessageGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="330">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
         </entry>
@@ -238,6 +250,8 @@
       <find>println</find>
       <find>file</find>
       <find>commandline</find>
+      <find>queue</find>
+      <find>AsString</find>
     </findStrings>
     <replaceStrings>
       <replace>r</replace>
@@ -650,11 +664,11 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$/processor" value="4612678405146" />
+        <entry key="$PROJECT_DIR$/processor" value="4613279585788" />
         <entry key="$PROJECT_DIR$/processor/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/processor/build.gradle" value="4173850426" />
+        <entry key="$PROJECT_DIR$/processor/build.gradle" value="1453210745" />
         <entry key="$PROJECT_DIR$/processor/settings.gradle" value="1559373882" />
-        <entry key="$PROJECT_DIR$/simulator" value="6151200543585" />
+        <entry key="$PROJECT_DIR$/simulator" value="6151452440630" />
         <entry key="$PROJECT_DIR$/simulator/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/simulator/build.gradle" value="2869090687" />
         <entry key="$PROJECT_DIR$/simulator/gradle/wrapper/gradle-wrapper.properties" value="2077093676" />
@@ -1073,22 +1087,29 @@
         <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ReceiverConfiguration.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/Runner/Runner.java" />
         <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Runner.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/FileReader.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/MyReader.java" />
-        <option value="$PROJECT_DIR$/simulator/build.gradle" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/models/CameraMessage.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/IMessageGenerator.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/fileReader/CSVReader.java" />
-        <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/resources/textfiles/overtredingen.csv" />
         <option value="$PROJECT_DIR$/simulator/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/CameraPair.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Camera.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/retrieval/CommandLineRunner.java" />
+        <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/CameraMessage.java" />
+        <option value="$PROJECT_DIR$/simulator/build.gradle" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/retrieval/Runner.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java" />
         <option value="$PROJECT_DIR$/processor/build.gradle" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/retrieval/Receiver.java" />
       </list>
     </option>
   </component>
@@ -1100,7 +1121,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1294" />
+    <option name="width" value="1284" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -1133,7 +1154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -1172,12 +1192,94 @@
             </path>
             <path>
               <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+              <item name="retrieval" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
               <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="simulator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="simulator" type="462c0819:PsiDirectoryNode" />
+              <item name="messenger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1187,7 +1289,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538580523380" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538734210172" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="jdk.selected.JAVA_MODULE" value="10" />
@@ -1197,7 +1299,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.gradle.running" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -1224,7 +1326,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.processor [dependencies]">
+  <component name="RunManager" selected="Spring Boot.ProcessorApplication">
     <configuration name="All Features in: simulator" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="3" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/simulator" />
@@ -1360,7 +1462,9 @@
       <workItem from="1537871956088" duration="20392000" />
       <workItem from="1538136867214" duration="7151000" />
       <workItem from="1538210875286" duration="3441000" />
-      <workItem from="1538575600721" duration="3880000" />
+      <workItem from="1538575600721" duration="6334000" />
+      <workItem from="1538653980260" duration="720000" />
+      <workItem from="1538677864748" duration="8470000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed #1.">
       <created>1537520700139</created>
@@ -1412,7 +1516,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93987000" />
+    <option name="totallyTimeSpent" value="105631000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1424,9 +1528,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1294" height="1057" extended-state="0" />
+    <frame x="-7" y="0" width="1284" height="1057" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25121555" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25816995" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1435,21 +1539,22 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32832617" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33044422" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.32861805" />
-      <window_info anchor="bottom" id="Spring" order="8" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3304721" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32827735" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32725322" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.37053087" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.33152762" />
+      <window_info anchor="right" id="Coverage" sideWeight="0.50107294" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.0" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49892703" weight="0.32995737" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -1469,6 +1574,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed #1." />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed #1." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/retrieval/Receiver.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1544,69 +1661,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simulator/src/test/java/kdg/be/simulator/SimulatorApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/models/CameraMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1614,9 +1672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1624,18 +1679,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="28" selection-start-line="28" selection-start-column="2" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1242#1243#0" expanded="true" />
-            <element signature="e#1311#1312#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/textfiles/overtredingen.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/EmissionZone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/RoadSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Fine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/CameraPair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Offense.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/models/CameraMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="39" column="47" selection-start-line="39" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/retrieval/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1644,42 +1785,98 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="52" column="19" lean-forward="true" selection-start-line="52" selection-end-line="53" />
+        <state relative-caret-position="237">
+          <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/textfiles/overtredingen.csv">
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="380">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#764#765#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/application.properties">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.0.9.RELEASE/bf1c19aadae4724bfe7e9196652e649bb08a99c4/spring-context-5.0.9.RELEASE-sources.jar!/org/springframework/scheduling/support/ScheduledMethodRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        <state relative-caret-position="197">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.0.9.RELEASE/bf1c19aadae4724bfe7e9196652e649bb08a99c4/spring-context-5.0.9.RELEASE-sources.jar!/org/springframework/scheduling/support/DelegatingErrorHandlingRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+        <state relative-caret-position="330">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.0.5.RELEASE/1d01cb7845c049c204191b8a553a322bb97208d9/spring-boot-2.0.5.RELEASE-sources.jar!/org/springframework/boot/SpringApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8066">
+          <caret line="1264" selection-start-line="1264" selection-end-line="1264" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/processor/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="30" column="69" lean-forward="true" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
+        <state relative-caret-position="627">
+          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/CameraMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/retrieval/Receiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="44" selection-start-line="44" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

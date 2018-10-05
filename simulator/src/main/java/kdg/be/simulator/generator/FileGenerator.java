@@ -56,7 +56,7 @@ public class FileGenerator implements IMessageGenerator {
         try {
           //delay the message for his given timestamp compared to Now
           Thread.sleep(ChronoUnit.MILLIS.between(LocalDateTime.now(), cm.getTimestamp()));
-//          Thread.sleep(1000);
+          //Thread.sleep(1000);
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
