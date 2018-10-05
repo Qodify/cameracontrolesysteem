@@ -3,7 +3,6 @@ package kdg.be.simulator.models;
 
 
 import java.time.LocalDateTime;
-import java.util.Random;
 
 public class CameraMessage {
   private int id;

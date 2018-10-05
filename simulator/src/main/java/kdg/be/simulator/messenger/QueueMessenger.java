@@ -6,6 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import kdg.be.simulator.generator.IMessageGenerator;
 import kdg.be.simulator.models.CameraMessage;
+import kdg.be.simulator.models.CameraMessageDTO;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -25,11 +26,16 @@ public class QueueMessenger implements IMessenger {
 
   @Override
   public void sendMessage(CameraMessage message) {
+    CameraMessageDTO cmDTO
+        = new CameraMessageDTO(message);
     ObjectMapper objectMapper = new XmlMapper();
-    String xml = message.toString();
+    String xml = cmDTO.toString();
     try {
-      xml = objectMapper.writeValueAsString(message);
+
+      xml = objectMapper.writeValueAsString(cmDTO);
     } catch (JsonProcessingException e) {
+      //kdg.be.simulator.models.CameraMessageDTO@3a96aa35
+      System.out.println(xml);
       e.printStackTrace();
     }
 
