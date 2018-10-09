@@ -17,7 +17,6 @@ import java.util.Scanner;
 public class CSVReader {
   private static final char DEFAULT_SEPARATOR = ',';
   private static final char DEFAULT_QUOTE = '"';
-  private Scanner scanner;
 
   public CSVReader() {
   }
@@ -25,24 +24,6 @@ public class CSVReader {
   public void Initialize() {
 
   }
-
-//  public CameraMessage GetCSVItem(String path) {
-//
-//
-//    try {
-//      scanner = new Scanner(new File(path));
-//      while (scanner.hasNext()) {
-//        List<String> line = parseLine(scanner.nextLine());
-//        return new CameraMessage(Integer.parseInt(line.get(0)), line.get(1), LocalDateTime.now().plusSeconds(Long.parseLong(line.get(2)) / 1000));
-//      }
-//    } catch (
-//        FileNotFoundException e) {
-//      e.printStackTrace();
-//    }
-//    scanner.close();
-//    return null;
-//  }
-
 
   public static List<String> parseLine(String cvsLine) {
     return parseLine(cvsLine, DEFAULT_SEPARATOR, DEFAULT_QUOTE);

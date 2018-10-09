@@ -1,10 +1,12 @@
-package kdg.be.processor.models;
+package kdg.be.processor.Domain.cameramessage;
 
 
+
+import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.Random;
 
+@Data
 public class CameraMessage {
   private int id;
   private String licenseplate;
@@ -37,20 +39,13 @@ public class CameraMessage {
     this.id = id;
     this.licenseplate = licenseplate;
     this.timestamp = timestamp;
+
+  }
+  public CameraMessage(CameraMessageDTO cmDTO) {
+    this.id = cmDTO.getId();
+    this.licenseplate = cmDTO.getLicenseplate();
+    this.timestamp= LocalDateTime.parse(cmDTO.getTimestamp());
   }
 
-
-
-  public int getId() {
-    return id;
-  }
-
-  public String getLicenseplate() {
-    return licenseplate;
-  }
-
-  public LocalDateTime getTimestamp() {
-    return timestamp;
-  }
 
 }

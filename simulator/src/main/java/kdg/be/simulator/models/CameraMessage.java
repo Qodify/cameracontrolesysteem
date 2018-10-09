@@ -39,7 +39,6 @@ public class CameraMessage {
   }
 
 
-
   public int getId() {
     return id;
   }

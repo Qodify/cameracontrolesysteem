@@ -9,7 +9,7 @@ public class CameraMessageDTO {
   public CameraMessageDTO(CameraMessage cm) {
     this.id = cm.getId();
     this.licenseplate = cm.getLicenseplate();
-    this.timestamp = cm.getLicenseplate().toString();
+    this.timestamp = cm.getTimestamp().toString();
   }
 
   public int getId() {

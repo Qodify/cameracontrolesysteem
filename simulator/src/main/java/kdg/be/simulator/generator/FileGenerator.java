@@ -2,6 +2,8 @@ package kdg.be.simulator.generator;
 
 import kdg.be.simulator.fileReader.CSVReader;
 import kdg.be.simulator.models.CameraMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -20,6 +22,9 @@ import static kdg.be.simulator.fileReader.CSVReader.parseLine;
 @Component
 @ConditionalOnProperty(name = "MessageGeneratorType", havingValue = "file")
 public class FileGenerator implements IMessageGenerator {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(FileGenerator.class);
+
   @Value("${filePath:.//src//main//resources//textfiles//overtredingen.csv}")
   private String filePath;
   private CSVReader cr;
@@ -44,7 +49,7 @@ public class FileGenerator implements IMessageGenerator {
         try {
           scanner = new Scanner(new File(filePath));
         } catch (FileNotFoundException e) {
-          e.printStackTrace();
+          LOGGER.error(e.getMessage());
         }
       }
       while (scanner.hasNext()) {
@@ -58,7 +63,7 @@ public class FileGenerator implements IMessageGenerator {
           Thread.sleep(ChronoUnit.MILLIS.between(LocalDateTime.now(), cm.getTimestamp()));
           //Thread.sleep(1000);
         } catch (InterruptedException e) {
-          e.printStackTrace();
+          LOGGER.error(e.getMessage());
         }
         //push cameramessage to queue
         return cm;
