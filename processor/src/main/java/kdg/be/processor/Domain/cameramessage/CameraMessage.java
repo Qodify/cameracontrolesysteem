@@ -5,6 +5,7 @@ package kdg.be.processor.Domain.cameramessage;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Data
 public class CameraMessage {

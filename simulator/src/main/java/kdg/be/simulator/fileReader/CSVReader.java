@@ -19,6 +19,7 @@ public class CSVReader {
   private static final char DEFAULT_QUOTE = '"';
 
   public CSVReader() {
+
   }
 
   public void Initialize() {

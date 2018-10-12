@@ -40,6 +40,7 @@ public class FileGenerator implements IMessageGenerator {
     cr.Initialize();
   }
 
+  //TODO: remove continueCycle csv mag maar een keer worden uitgelezen
   @Override
   public CameraMessage generate() {
     boolean continueCycle = true;
@@ -61,7 +62,7 @@ public class FileGenerator implements IMessageGenerator {
         try {
           //delay the message for his given timestamp compared to Now
           Thread.sleep(ChronoUnit.MILLIS.between(LocalDateTime.now(), cm.getTimestamp()));
-          //Thread.sleep(1000);
+
         } catch (InterruptedException e) {
           LOGGER.error(e.getMessage());
         }

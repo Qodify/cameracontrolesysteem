@@ -2,7 +2,7 @@ package kdg.be.processor.BL.retrieval;
 
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import kdg.be.processor.BL.listener.OffenseController;
+import kdg.be.processor.BL.offense.IReceiverListener;
 import kdg.be.processor.Domain.cameramessage.CameraMessage;
 import kdg.be.processor.Domain.cameramessage.CameraMessageDTO;
 import org.slf4j.Logger;
@@ -17,11 +17,11 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class Receiver {
+public class Receiver implements IReceiver {
   private static final Logger LOGGER = LoggerFactory.getLogger(Receiver.class);
 
   @Autowired
-  private List<OffenseController> listListener;
+  private List<IReceiverListener> listListener;
 
   @Bean
   SimpleMessageListenerContainer container(ConnectionFactory connectionFactory, MessageListenerAdapter listenerAdapter) {
@@ -42,13 +42,16 @@ public class Receiver {
     try {
       XmlMapper xmlMapper = new XmlMapper();
       var cmDTO = xmlMapper.readValue(xmlMessage, CameraMessageDTO.class);
-      CameraMessage cm = new CameraMessage(cmDTO);
+      var cm = new CameraMessage(cmDTO);
       LOGGER.info("Parced <" + cm.toString() + ">");
-      listListener.forEach(l -> l.MessageHandler(cm));
+      notifyListener(cm);
     } catch (Exception e) {
       LOGGER.error("Incoming Message mismatches with parsing rules, check the toString method of the messageDTO" + e.getMessage());
-
-      System.exit(65);
     }
+  }
+
+  @Override
+  public void notifyListener(CameraMessage cm) {
+    listListener.forEach(l -> l.MessageHandler(cm));
   }
 }
