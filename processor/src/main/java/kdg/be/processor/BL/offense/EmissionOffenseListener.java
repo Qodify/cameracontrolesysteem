@@ -1,5 +1,8 @@
 package kdg.be.processor.BL.offense;
 
+import be.kdg.sa.services.CameraNotFoundException;
+import be.kdg.sa.services.InvalidLicensePlateException;
+import be.kdg.sa.services.LicensePlateNotFoundException;
 import kdg.be.processor.BL.adapter.CameraServiceAdapter;
 import kdg.be.processor.BL.adapter.LicensePlateServiceAdapter;
 import kdg.be.processor.BL.manager.OffenseManager;
@@ -22,8 +25,9 @@ public class EmissionOffenseListener implements IReceiverListener {
     this.offenseManager = offenseManager;
   }
 
+
   @Override
-  public void OnMessageReceived(CameraMessage cm) {
-    offenseManager.calcOffense(cm, licensePlateServiceAdapter.get(cm.getLicenseplate()), cameraServiceAdapter.get(cm.getId()));
+  public void OnMessageReceived(CameraMessage cm) throws CameraNotFoundException, LicensePlateNotFoundException, InvalidLicensePlateException {
+    offenseManager.calcEmissionOffense(cm, licensePlateServiceAdapter.get(cm.getLicenseplate()), cameraServiceAdapter.get(cm.getId()));
   }
 }

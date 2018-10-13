@@ -1,7 +1,19 @@
 package kdg.be.processor.Domain.offense;
 
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@NoArgsConstructor
+@Entity
 public class EmissionOffense extends Offense {
+
   private final int FINE = 80;
+  @Id
+  @GeneratedValue
+  private Long Id;
   private String licenseplate;
   private int carEuronorm;
   private int emissionZoneEuronorm;
@@ -34,5 +46,15 @@ public class EmissionOffense extends Offense {
 
   public void setEmissionZoneEuronorm(int emissionZoneEuronorm) {
     this.emissionZoneEuronorm = emissionZoneEuronorm;
+  }
+
+  @Override
+  public String toString() {
+    return "EmissionOffense{" +
+        "Id=" + Id +
+        ", licenseplate='" + licenseplate + '\'' +
+        ", carEuronorm=" + carEuronorm +
+        ", emissionZoneEuronorm=" + emissionZoneEuronorm +
+        '}';
   }
 }

@@ -1,6 +1,5 @@
 package kdg.be.simulator.generator;
 
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import kdg.be.simulator.models.CameraMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,10 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Component
@@ -22,43 +19,24 @@ public class RandomMessageGenerator implements IMessageGenerator {
   @Value("${rIdbound:1000}")
   Integer rIdBound;
   private int randomIdBound;
-  private String randomLicensePlate;
+
   private static final Logger LOGGER = LoggerFactory.getLogger(RandomMessageGenerator.class);
 
   public RandomMessageGenerator(@Value("${rIdbound:1000}") Integer rIdBound) {
     r = new Random();
     this.randomIdBound = rIdBound;
   }
-
-
   @Override
-  public CameraMessage generate() {
+  public Optional<CameraMessage> generate() {
     LOGGER.debug("generate message");
-    randomLicensePlate = String.format("%d-%s%s%s-%d%d%d",
-        r.nextInt(9) + 1, rndChar(), rndChar(), rndChar(),
-        r.nextInt(9) + 1, r.nextInt(9) + 1, r.nextInt(9) + 1);
+    String randomLicensePlate = String.format("%d-%s%s%s-%d%d%d",
+            r.nextInt(9) + 1, rndChar(), rndChar(), rndChar(),
+            r.nextInt(9) + 1, r.nextInt(9) + 1, r.nextInt(9) + 1);
 
-    return new CameraMessage(r.nextInt(randomIdBound) + 1, randomLicensePlate, LocalDateTime.now());
+    return Optional.of(new CameraMessage(r.nextInt(randomIdBound) + 1, randomLicensePlate, LocalDateTime.now()));
 
   }
-
   private char rndChar() {
     return (char) (65 + r.nextInt(25));
   }
-
-
-  public int getRandomIdBound() {
-    return randomIdBound;
-  }
-  public void setRandomIdBound(int randomIdBound) {
-    this.randomIdBound = randomIdBound;
-  }
-  public String getRandomLicensePlate() {
-    return randomLicensePlate;
-  }
-  public void setRandomLicensePlate(String randomLicensePlate) {
-    this.randomLicensePlate = randomLicensePlate;
-  }
-
-
 }

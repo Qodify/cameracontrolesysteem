@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @ConditionalOnProperty(name = "MessengerType", havingValue = "qm")
 public class QueueMessenger implements IMessenger {
@@ -28,20 +30,19 @@ public class QueueMessenger implements IMessenger {
 
 
   @Override
-  public void sendMessage(CameraMessage message) {
-    CameraMessageDTO cmDTO
-        = new CameraMessageDTO(message);
-    ObjectMapper objectMapper = new XmlMapper();
-    String xml = cmDTO.toString();
+  public void sendMessage(Optional<CameraMessage> message) {
+    CameraMessageDTO cmDTO;
+    String xml;
     try {
-
+      cmDTO = new CameraMessageDTO(message.orElseThrow(IllegalStateException::new));
+      xml = cmDTO.toString();
+      var objectMapper = new XmlMapper();
       xml = objectMapper.writeValueAsString(cmDTO);
+      rabbitTemplate.convertAndSend("MessageQueue", xml);
+    } catch (IllegalStateException e) {
+      LOGGER.error("message is nullreferenced");
     } catch (JsonProcessingException e) {
-      //kdg.be.simulator.Domain.CameraMessageDTO@3a96aa35
-      System.out.println(xml);
       LOGGER.error(e.getMessage());
     }
-
-    rabbitTemplate.convertAndSend("MessageQueue", xml);
   }
 }

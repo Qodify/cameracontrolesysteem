@@ -15,7 +15,9 @@ import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
+import java.util.regex.PatternSyntaxException;
 
 import static kdg.be.simulator.fileReader.CSVReader.parseLine;
 
@@ -40,12 +42,9 @@ public class FileGenerator implements IMessageGenerator {
     cr.Initialize();
   }
 
-  //TODO: remove continueCycle csv mag maar een keer worden uitgelezen
+
   @Override
-  public CameraMessage generate() {
-    boolean continueCycle = true;
-    do {
-      //check if scanner exists
+  public Optional<CameraMessage> generate() {
       if (scanner == null) {
         try {
           scanner = new Scanner(new File(filePath));
@@ -53,28 +52,27 @@ public class FileGenerator implements IMessageGenerator {
           LOGGER.error(e.getMessage());
         }
       }
-      while (scanner.hasNext()) {
-        //fill list with scanner uses method from CSVReader
+      if (scanner.hasNext()) {
         List<String> line = parseLine(scanner.nextLine());
-        //fills object
-        var cm = new CameraMessage(Integer.parseInt(line.get(0)), line.get(1),
-            LocalDateTime.now().plusSeconds(Long.parseLong(line.get(2)) / 1000));
-        try {
-          //delay the message for his given timestamp compared to Now
-          Thread.sleep(ChronoUnit.MILLIS.between(LocalDateTime.now(), cm.getTimestamp()));
 
-        } catch (InterruptedException e) {
-          LOGGER.error(e.getMessage());
+        if (line.get(1).matches("^[0-9]-[A-Z]{3}-[0-9]{3}")) {
+          var cm = new CameraMessage(Integer.parseInt(line.get(0)), line.get(1),
+                                     LocalDateTime.now().plusSeconds(Long.parseLong(line.get(2)) / 1000));
+          try {
+            Thread.sleep(ChronoUnit.MILLIS.between(LocalDateTime.now(), cm.getTimestamp()));
+          } catch (InterruptedException e) {
+            LOGGER.error(e.getMessage());
+          }
+          return Optional.of(cm);
+        } else {
+          LOGGER.error(line.get(1) + "Is not a valid licenseplate. LicensePlate must match ^[0-9]-[A-" +
+                  "Z]{3}-[0-9]{3}" + " Check your csv file.");
         }
-        //push cameramessage to queue
-        return cm;
       }
-      //nullify scanner to read csv again
       scanner = null;
-    } while (continueCycle);
-
-    return null;
+    return Optional.empty();
   }
-
-
 }
+
+
+

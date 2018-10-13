@@ -4,7 +4,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class FineManager {
-  public void createFine(){
+
+  public void add(double boeteBedrag) {
 
   }
 }

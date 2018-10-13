@@ -52,6 +52,6 @@ public class Receiver implements IReceiver {
 
   @Override
   public void notifyListener(CameraMessage cm) {
-    listListener.forEach(l -> l.MessageHandler(cm));
+    listListener.forEach(l -> l.OnMessageReceived(cm));
   }
 }

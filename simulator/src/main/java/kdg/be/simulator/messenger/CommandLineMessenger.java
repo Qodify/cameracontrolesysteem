@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Component
 @ConditionalOnProperty(name = "MessengerType", havingValue = "clm")
@@ -16,8 +17,8 @@ public class CommandLineMessenger implements IMessenger {
   }
 
   @Override
-  public void sendMessage(CameraMessage message) {
-    System.out.println(message);
+  public void sendMessage(Optional<CameraMessage> message) {
+    message.ifPresent(System.out::println);
 
   }
 }

@@ -12,9 +12,11 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import kdg.be.processor.Domain.perception.CameraPercept;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Component
 public class CameraServiceAdapter {
@@ -22,35 +24,34 @@ public class CameraServiceAdapter {
 
   private CameraServiceProxy cameraServiceProxy;
 
-  public CameraServiceAdapter() {
-    cameraServiceProxy = new CameraServiceProxy();
+  @Autowired
+  public CameraServiceAdapter(CameraServiceProxy cameraServiceProxy) {
+    this.cameraServiceProxy = cameraServiceProxy;
   }
 
-  public CameraPercept get(int id) {
+
+  public Optional<CameraPercept> get(int id) {
     try {
       ObjectMapper objectMapper = new ObjectMapper();
-      SimpleModule module =
-          new SimpleModule("CustomCameraDeserializer");
+      SimpleModule module = new SimpleModule("CustomCameraDeserializer");
       module.addDeserializer(CameraPercept.class, new CustomCameraDeserializer());
       objectMapper.registerModule(module);
-      var cp = objectMapper.readValue(cameraServiceProxy.get(id), CameraPercept.class);
-      return cp;
+      return Optional.of(objectMapper.readValue(cameraServiceProxy.get(id), CameraPercept.class));
     } catch (CameraNotFoundException e) {
-      LOGGER.error("Camera is not found");
+      throw new CameraNotFoundException(id);
 
     } catch (IOException e) {
       LOGGER.error(e.getMessage());
     }
-    return null;
+    return Optional.empty();
   }
 
   class CustomCameraDeserializer extends StdDeserializer<CameraPercept> {
-
-    public CustomCameraDeserializer() {
+    private CustomCameraDeserializer() {
       this(null);
     }
 
-    public CustomCameraDeserializer(Class<?> vc) {
+    private CustomCameraDeserializer(Class<?> vc) {
       super(vc);
     }
 

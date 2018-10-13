@@ -4,8 +4,6 @@ import be.kdg.sa.services.InvalidLicensePlateException;
 import be.kdg.sa.services.LicensePlateNotFoundException;
 import be.kdg.sa.services.LicensePlateServiceProxy;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import kdg.be.processor.Domain.perception.CameraPercept;
 import kdg.be.processor.Domain.perception.LicensePlatePercept;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Component
 public class LicensePlateServiceAdapter {
@@ -20,20 +19,20 @@ public class LicensePlateServiceAdapter {
 
   private LicensePlateServiceProxy licensePlateServiceProxy;
 
-  public LicensePlateServiceAdapter() {
-    licensePlateServiceProxy = new LicensePlateServiceProxy();
+  @Autowired
+  public LicensePlateServiceAdapter(LicensePlateServiceProxy licensePlateServiceProxy) {
+    this.licensePlateServiceProxy = licensePlateServiceProxy;
   }
 
-  public LicensePlatePercept get(String licensePLate) {
+  public Optional<LicensePlatePercept> get(String licensePLate) throws InvalidLicensePlateException, LicensePlateNotFoundException {
     try {
       ObjectMapper objectMapper = new ObjectMapper();
-
-      LicensePlatePercept lpp = objectMapper.readValue(licensePlateServiceProxy.get(licensePLate), LicensePlatePercept.class);
+      var lpp = objectMapper.readValue(licensePlateServiceProxy.get(licensePLate), LicensePlatePercept.class);
       LOGGER.trace(lpp.toString());
-      return lpp;
-    } catch (IOException | InvalidLicensePlateException | LicensePlateNotFoundException e) {
-      e.getMessage();
+      return Optional.of(lpp);
+    } catch (IOException e) {
+      LOGGER.warn(e.getMessage());
     }
-    return null;
+    return Optional.empty();
   }
 }

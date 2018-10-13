@@ -19,7 +19,7 @@ public class SimulatorController {
     this.messenger = messenger;
   }
 
-  @Scheduled(fixedDelayString = "${frequentie}")
+  //@Scheduled(fixedDelayString = "${frequentie}")
   public void generate() {
     messenger.sendMessage(messageGenerator.generate());
   }
