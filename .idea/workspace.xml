@@ -2,29 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abcbd6f-3e25-4194-abd6-661c800e3081" name="Default Changelist" comment="Fixed #1.">
-      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/configuration/AdapterConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/EmissionOffenseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/fine/Fine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/LoggingAccessDeniedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/ErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/MvcController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/RestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/resources/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/resources/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/processor/src/main/resources/templates/offenses.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/processor/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/processor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/processor/processor.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/CameraServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/CameraServiceAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/LicensePlateServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/LicensePlateServiceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/FineManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/FineManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/OffenseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/OffenseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/EmissionOffenseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/EmissionOffenseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/EmissionOffenseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/EmissionOffenseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/IReceiverListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/IReceiverListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/SpeedingOffenseCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/SpeedingOffenseCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/retrieval/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/retrieval/Receiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/EmissionOffenseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/OffenseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/EmissionOffense.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/EmissionOffense.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/Offense.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/Offense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/SpeedingOffense.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/SpeedingOffense.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processor/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/processor/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/IMessageGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/IMessageGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/IMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/IMessenger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/src/test/java/kdg/be/simulator/SimulatorApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/src/test/java/kdg/be/simulator/SimulatorApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/processor/.gradle/" />
     <ignored path="$PROJECT_DIR$/processor/build/" />
@@ -32,6 +43,7 @@
     <ignored path="$PROJECT_DIR$/simulator/.gradle/" />
     <ignored path="$PROJECT_DIR$/simulator/build/" />
     <ignored path="$PROJECT_DIR$/simulator/out/" />
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +70,12 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="testdb" type="feb32156:DbDataSourceImpl" />
+        <item name="OffenseDb" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="OffenseDb" type="feb32156:DbDataSourceImpl" />
+        <item name="TESTDB: database" type="c8e2528e:H2ImplModel$Database" />
       </path>
     </expand>
     <select />
@@ -87,7 +104,7 @@
     <session id="-1527166951">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -97,8 +114,9 @@
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.open.time.40" value="3" />
+          <entry key="project.open.time.40" value="4" />
           <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.49" value="1" />
@@ -106,70 +124,149 @@
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="csv" value="4" />
+          <entry key="css" value="2" />
+          <entry key="csv" value="5" />
           <entry key="gitignore" value="4" />
-          <entry key="gradle" value="20" />
+          <entry key="gradle" value="22" />
+          <entry key="html" value="15" />
+          <entry key="http" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="200" />
+          <entry key="java" value="299" />
           <entry key="json" value="2" />
-          <entry key="properties" value="16" />
-          <entry key="sql" value="2" />
+          <entry key="properties" value="22" />
+          <entry key="sql" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="CSV" value="3" />
-          <entry key="Groovy" value="20" />
+          <entry key="CSS" value="2" />
+          <entry key="CSV" value="4" />
+          <entry key="Groovy" value="22" />
+          <entry key="HTML" value="15" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="200" />
+          <entry key="JAVA" value="299" />
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Properties" value="16" />
-          <entry key="Scratch" value="2" />
+          <entry key="Properties" value="22" />
+          <entry key="Scratch" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="css" value="3" />
           <entry key="csv" value="1" />
-          <entry key="dummy" value="82" />
+          <entry key="dummy" value="86" />
           <entry key="gitignore" value="8" />
-          <entry key="gradle" value="137" />
-          <entry key="java" value="17763" />
-          <entry key="properties" value="516" />
-          <entry key="sql" value="46" />
+          <entry key="gradle" value="163" />
+          <entry key="html" value="436" />
+          <entry key="java" value="21201" />
+          <entry key="properties" value="595" />
+          <entry key="sql" value="78" />
           <entry key="txt" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="CSS" value="3" />
           <entry key="CSV" value="1" />
-          <entry key="Groovy" value="137" />
-          <entry key="JAVA" value="17763" />
-          <entry key="PLAIN_TEXT" value="99" />
-          <entry key="Properties" value="516" />
-          <entry key="Scratch" value="46" />
+          <entry key="Groovy" value="163" />
+          <entry key="HTML" value="436" />
+          <entry key="JAVA" value="21201" />
+          <entry key="PLAIN_TEXT" value="103" />
+          <entry key="Properties" value="595" />
+          <entry key="Scratch" value="78" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.vcs.git.usages" />
-      <usages-collector id="statistics.spring.boot.mvc.usages" />
+      <usages-collector id="statistics.spring.boot.mvc.usages">
+        <counts>
+          <entry key="DefaultRequestNavigator.fromCode" value="37" />
+          <entry key="RestClientRequestEditorNavigator.fromCode" value="1" />
+          <entry key="RestClientRequestRunnerNavigator.fromCode" value="50" />
+        </counts>
+      </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/MvcController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="19" selection-start-line="19" selection-end-line="25" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/processor/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="162">
+              <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/resources/static/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/SecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+              <folding>
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1082#1083#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-start-column="4" selection-end-line="16" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/RestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="27" column="10" selection-start-line="27" selection-end-line="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,89 +274,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+            <state relative-caret-position="18">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/error.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="216">
+              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java">
+        <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/offenses.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
-              <folding>
-                <element signature="e#764#765#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/IMessenger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/IMessageGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+            <state relative-caret-position="423">
+              <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -272,24 +306,19 @@
         <option value="FxmlFile" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
+        <option value="CSS File" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fileGNR</find>
-      <find>cucumber</find>
-      <find>random</find>
-      <find>scheduled</find>
-      <find>conditional</find>
-      <find>delivery</find>
       <find>println</find>
       <find>file</find>
       <find>commandline</find>
       <find>queue</find>
       <find>AsString</find>
-      <find>logger</find>
       <find>DateTime</find>
       <find>objectmapper</find>
       <find>printstac</find>
@@ -303,9 +332,22 @@
       <find>Optional</find>
       <find>hikari</find>
       <find>|</find>
+      <find>calcEmissionOffense</find>
+      <find>get</find>
+      <find>@Value</find>
+      <find>create</find>
+      <find>templateeng</find>
+      <find>onetoone</find>
+      <find>joincolumn</find>
+      <find>name</find>
+      <find>logger</find>
+      <find>jquery</find>
+      <find>login</find>
+      <find>book_detail_id</find>
     </findStrings>
     <replaceStrings>
       <replace>r</replace>
+      <replace>add</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -715,9 +757,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$/processor" value="4613925741984" />
+        <entry key="$PROJECT_DIR$/processor" value="4614307977079" />
         <entry key="$PROJECT_DIR$/processor/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/processor/build.gradle" value="1038622561" />
+        <entry key="$PROJECT_DIR$/processor/build.gradle" value="2989611745" />
         <entry key="$PROJECT_DIR$/processor/settings.gradle" value="1559373882" />
         <entry key="$PROJECT_DIR$/simulator" value="6151452440630" />
         <entry key="$PROJECT_DIR$/simulator/.gradle" value="0" />
@@ -1040,57 +1082,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/Camera.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/models/CameraPercept.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/adapter/CameraServiceAdapter.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/listener/MessageListener.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/perception/LicensePlatePercept.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/MessageListener.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/controller/MessageListener.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/controller/OffenseController.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/controller/OffenseService.java" />
-        <option value="$PROJECT_DIR$/processor/src/test/java/kdg/be/processor/ProcessorApplicationTests.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/controller/OffenseListener.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/service/OffenseService.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/perception/CameraPercept.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/cameramessage/CameraMessageDTO.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/OffenseListener.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/IOffense.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/EmissionOffense.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/IOffense.java" />
-        <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/fileReader/CSVReader.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/cameramessage/CameraMessage.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/OffenseController.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/IReceiverListener.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/IReceiver.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/IReceiverListener.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/EmissionOffenseCalculator.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/SpeedingOffenseCalculator.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/manager.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/configuration/AdapterConfig.java" />
         <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/FineManager.java" />
         <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/CameraServiceAdapter.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/LicensePlateServiceAdapter.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/EmissionOffenseListener.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/OffenseManager.java" />
         <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/IOffenseRepository.java" />
-        <option value="$PROJECT_DIR$/processor/build.gradle" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/Offense.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/OffenseRepository.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/EmissionOffenseRepository.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/retrieval/Receiver.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/EmissionOffense.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java" />
-        <option value="$PROJECT_DIR$/processor/src/main/resources/application.properties" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ffa9bcf1-cd02-4596-a0e1-4a5bf92385b5/console.sql" />
-        <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/IMessenger.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/InvalidLicensePlateException.java" />
-        <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/IMessageGenerator.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java" />
         <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/LicensePlateServiceAdapter.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/EmissionOffenseListener.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/SpeedingOffenseRepository.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/WebConfig.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/FineRepository.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/EmissionOffenseRepository.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/fine/Fine.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/OffenseManager.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3b0d286a-cf37-4f7b-a39f-80a61b636337/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ffa9bcf1-cd02-4596-a0e1-4a5bf92385b5/console.sql" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/fine.html" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/OffenseRepository.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/EmissionOffense.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/offenses.html" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/Login.html" />
+        <option value="$PROJECT_DIR$/processor/build.gradle" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/Finecontroller.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/layout.html" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/fragments/header.html" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/fragments/footer.html" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/user/index.html" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/error/access-denied.html" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/IReceiverListener.java" />
+        <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java" />
+        <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/Config.java" />
+        <option value="$PROJECT_DIR$/simulator/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/SpeedingOffense.java" />
+        <option value="$PROJECT_DIR$/simulator/src/test/java/kdg/be/simulator/SimulatorApplicationTests.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/retrieval/Receiver.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/Offense.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/login.html" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/templates/error.html" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/MvcController.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/LoggingAccessDeniedHandler.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/ErrorController.java" />
+        <option value="$PROJECT_DIR$/processor/src/main/resources/static/css/main.css" />
+        <option value="$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/RestController.java" />
+        <option value="$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java" />
       </list>
     </option>
   </component>
@@ -1100,9 +1142,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
-    <option name="width" value="1294" />
+    <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -1479,10 +1521,130 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="processor" type="58d84e3e:PackageViewProjectNode" />
+              <item name="simulator" type="eaaa3913:PackageViewModuleGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+              <item name="DAL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+              <item name="Domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+              <item name="Domain" type="462c0819:PsiDirectoryNode" />
+              <item name="offense" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processor" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="processor" type="b2602c69:ProjectViewProjectNode" />
               <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -1531,56 +1693,42 @@
               <item name="simulator" type="462c0819:PsiDirectoryNode" />
               <item name="generator" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="processor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simulator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="simulator" type="462c0819:PsiDirectoryNode" />
-              <item name="messenger" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="processor" type="58d84e3e:PackageViewProjectNode" />
-              <item name="simulator" type="eaaa3913:PackageViewModuleGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="h2" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539441607862" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539940023986" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="10" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/processor/lib/h2.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/thymeleafstarter/hello-spring" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="kdg.be.simulator.Messenger" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="kdg.be.processor.DAL" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -1588,6 +1736,47 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\quint\IdeaProjects\CameraDetectorSystem\processor\lib" />
     </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/offense" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/offenses" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/login-error.html" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/access-denied" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/login" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -1605,9 +1794,9 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.14393939" />
+    <option name="contentProportion" value="0.008443909" />
   </component>
-  <component name="RunManager" selected="Spring Boot.ProcessorApplication">
+  <component name="RunManager" selected="Spring Boot.SimulatorApplication">
     <configuration name="All Features in: simulator" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="3" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/simulator" />
@@ -1755,7 +1944,9 @@
       <workItem from="1539345266234" duration="8875000" />
       <workItem from="1539371486915" duration="272000" />
       <workItem from="1539371877785" duration="241000" />
-      <workItem from="1539372224501" duration="12069000" />
+      <workItem from="1539372224501" duration="17976000" />
+      <workItem from="1539602806538" duration="660000" />
+      <workItem from="1539681749973" duration="31584000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed #1.">
       <created>1537520700139</created>
@@ -1807,7 +1998,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173147000" />
+    <option name="totallyTimeSpent" value="211298000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1819,10 +2010,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1294" height="1057" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20340356" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13859275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1830,23 +2021,23 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" visible="true" weight="0.09189189" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49849623" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49837926" weight="0.32864866" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49849623" weight="0.32900432" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49837926" weight="0.33547696" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49918962" weight="0.32864866" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49918962" weight="0.3264865" />
-      <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.49837926" weight="0.32756758" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.8606159" weight="0.32972974" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49918962" weight="0.32792208" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49918962" weight="0.32575756" />
+      <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.49837926" weight="0.32683983" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.8606159" weight="0.32900432" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.13614263" side_tool="true" weight="0.32864866" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49756888" weight="0.32540542" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49756888" weight="0.32683983" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32900432" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.86142623" weight="0.32864866" />
-      <window_info anchor="bottom" id="Java Enterprise" order="15" sideWeight="0.8638574" weight="0.32864866" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.86142623" visible="true" weight="0.34083602" />
+      <window_info anchor="bottom" id="Java Enterprise" order="15" sideWeight="0.8638574" weight="0.32792208" />
+      <window_info anchor="bottom" id="Database Console" order="16" weight="0.34848484" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49892703" weight="0.32995737" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1854,7 +2045,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.3294271" />
-      <window_info anchor="right" id="Database" order="7" weight="0.21636952" />
+      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.05490405" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Coverage" order="10" sideWeight="0.50107294" side_tool="true" visible="true" weight="0.0" />
@@ -1871,269 +2062,353 @@
     <MESSAGE value="Fixed #1." />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed #1." />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java</url>
+          <line>46</line>
+          <properties class="kdg.be.simulator.generator.FileGenerator" method="generate">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java</url>
+          <line>29</line>
+          <properties class="kdg.be.simulator.controller.SimulatorController" method="generate">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="((EmissionOffense)((java.util.ArrayList)olist).get(1)).fine" custom="kdg.be.processor.Domain.offense.EmissionOffense,java.util.ArrayList" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/cameramessage/CameraMessageDTO.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.0.9.RELEASE/c19005e8a2a2216b0e9da304f1dce8ba0d72e110/spring-web-5.0.9.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="238">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/textfiles/overtredingen.csv">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.0.9.RELEASE/631cf6fd5e89e7797b0504994338fe07c983a551/spring-webmvc-5.0.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="346">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.9.6/dad3a9fbbedf8781dfd138539cd82638ebad5678/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/ObjectMapper.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.0.9.RELEASE/631cf6fd5e89e7797b0504994338fe07c983a551/spring-webmvc-5.0.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="3003" selection-start-line="3003" selection-end-line="3003" />
+        <state relative-caret-position="364">
+          <caret line="808" selection-start-line="808" selection-end-line="808" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.0.9.RELEASE/ab4feec73b188109eb1a3aa8aed83c1f97ed1168/spring-core-5.0.9.RELEASE-sources.jar!/org/springframework/util/MethodInvoker.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.0.9.RELEASE/631cf6fd5e89e7797b0504994338fe07c983a551/spring-webmvc-5.0.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="279" selection-start-line="279" selection-end-line="279" />
+        <state relative-caret-position="156">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.amqp/spring-rabbit/2.0.6.RELEASE/e65c9ce773e25cfd85b3dd5938300e7e0739f3db/spring-rabbit-2.0.6.RELEASE-sources.jar!/org/springframework/amqp/rabbit/listener/adapter/MessageListenerAdapter.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.0.9.RELEASE/631cf6fd5e89e7797b0504994338fe07c983a551/spring-webmvc-5.0.9.RELEASE-sources.jar!/org/springframework/web/servlet/DispatcherServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="304" selection-start-line="304" selection-end-line="304" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.amqp/spring-rabbit/2.0.6.RELEASE/e65c9ce773e25cfd85b3dd5938300e7e0739f3db/spring-rabbit-2.0.6.RELEASE-sources.jar!/org/springframework/amqp/rabbit/listener/AbstractMessageListenerContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="1320" selection-start-line="1320" selection-end-line="1320" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.amqp/spring-rabbit/2.0.6.RELEASE/e65c9ce773e25cfd85b3dd5938300e7e0739f3db/spring-rabbit-2.0.6.RELEASE-sources.jar!/org/springframework/amqp/rabbit/listener/SimpleMessageListenerContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-733">
-          <caret line="1176" selection-start-line="1176" selection-end-line="1176" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/IOffense.java" />
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/EmissionOffenseCalculator.java" />
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/cameramessage/CameraMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/retrieval/IReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/IReceiverListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/OffenseController.java" />
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/configuration/AdapterConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="62" lean-forward="true" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/FineManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/test/java/kdg/be/simulator/SimulatorApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="26" column="87" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Galgje3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Galgje1.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Galgje2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/SpeedingOffenseCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/test/java/kdg/be/processor/ProcessorApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/fileReader/CSVReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/perception/LicensePlatePercept.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/processor/lib/license-plate-service-1.0.jar!/be/kdg/sa/services/InvalidLicensePlateException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/CameraServiceAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#CustomCameraDeserializer#0;class#CameraServiceAdapter#0" />
-            <element signature="method#deserialize#0;class#CustomCameraDeserializer#0;class#CameraServiceAdapter#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/processor/lib/camera-service-1.0.jar!/be/kdg/sa/services/CameraNotFoundException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/LicensePlateServiceAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/offense/EmissionOffenseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="141" selection-start-line="29" selection-start-column="141" selection-end-line="29" selection-end-column="141" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/IOffenseRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/Offense.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="166">
+          <caret line="1007" selection-start-line="1007" selection-end-line="1007" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.0.10.RELEASE/b7c6de4b7a506d67f608113b6ecf21091b927002/spring-data-commons-2.0.10.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/EmissionOffenseRepository.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/ProcessorApplication.http">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="72">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/retrieval/Receiver.java">
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/WebConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="55" column="3" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
-          <folding>
-            <element signature="e#2066#2067#0" expanded="true" />
-            <element signature="e#2123#2124#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/processor.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1170">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/EmissionOffense.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="58" column="3" lean-forward="true" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="426">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/processor/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="353">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/fragments/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="66" lean-forward="true" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/fragments/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding>
+            <element signature="e#251#257#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#footer#0;n#th:block#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/error/access-denied.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.0.9.RELEASE/bf1c19aadae4724bfe7e9196652e649bb08a99c4/spring-context-5.0.9.RELEASE-sources.jar!/org/springframework/scheduling/support/ScheduledMethodRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.0.9.RELEASE/bf1c19aadae4724bfe7e9196652e649bb08a99c4/spring-context-5.0.9.RELEASE-sources.jar!/org/springframework/scheduling/support/DelegatingErrorHandlingRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/textfiles/overtredingen.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/EmissionOffense.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/SpeedingOffense.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulator/src/test/java/kdg/be/simulator/SimulatorApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/retrieval/Receiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="61" column="3" lean-forward="true" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#2367#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/retrieval/IReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/configuration/AdapterConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/CameraServiceAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/adapter/LicensePlateServiceAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/EmissionOffenseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/IReceiverListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/listener/SpeedingOffenseCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/OffenseManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-end-line="21" />
+        <state relative-caret-position="-7">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#calcSpeedingOffense#0;class#OffenseManager#0" />
+            <element signature="method#addSpeedingOffense#0;class#OffenseManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/BL/manager/FineManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/Domain/offense/Offense.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="7" column="5" selection-start-line="6" selection-start-column="31" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3b0d286a-cf37-4f7b-a39f-80a61b636337/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/LoggingAccessDeniedHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/DAL/OffenseRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2142,111 +2417,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/ProcessorApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="198">
+          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding>
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/58a091ac-1f2c-43bf-a563-7fa9df0efa97/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/ErrorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="3" lean-forward="true" selection-start-column="2" selection-end-line="24" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#977#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ffa9bcf1-cd02-4596-a0e1-4a5bf92385b5/console.sql">
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/configuration/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/offenses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+          <caret selection-start-column="4" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/MvcController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="19" selection-start-line="19" selection-end-line="25" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/processor/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/SimulatorApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
-          <folding>
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/IMessenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/InvalidLicensePlateException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#170#171#0" expanded="true" />
-            <element signature="e#201#202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/CommandLineMessenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/IMessageGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        <state relative-caret-position="162">
+          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/FileGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+        <state relative-caret-position="18">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/generator/RandomMessageGenerator.java">
+    <entry file="file://$PROJECT_DIR$/processor/src/main/java/kdg/be/processor/UI/controller/RestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        <state relative-caret-position="225">
+          <caret line="27" column="10" selection-start-line="27" selection-end-line="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/messenger/QueueMessenger.java">
+    <entry file="file://$PROJECT_DIR$/simulator/src/main/java/kdg/be/simulator/controller/SimulatorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+        <state relative-caret-position="342">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
           </folding>
         </state>
       </provider>

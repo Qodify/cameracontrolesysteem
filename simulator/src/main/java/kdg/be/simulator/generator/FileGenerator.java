@@ -45,31 +45,38 @@ public class FileGenerator implements IMessageGenerator {
 
   @Override
   public Optional<CameraMessage> generate() {
-      if (scanner == null) {
+    scanner = null;
+    do {
+      try {
+        scanner = new Scanner(new File(filePath));
+      } catch (FileNotFoundException e) {
+        LOGGER.error(e.getMessage());
+      }
+
+
+      List<String> line = parseLine(scanner.nextLine());
+
+      if (line.get(1).matches("^[0-9]-[A-Z]{3}-[0-9]{3}")) {
+
+        var cm = new CameraMessage(Integer.parseInt(line.get(0)), line.get(1),
+                LocalDateTime.now().plusSeconds(Long.parseLong(line.get(2)) / 1000));
+
         try {
-          scanner = new Scanner(new File(filePath));
-        } catch (FileNotFoundException e) {
+          if (Long.parseLong(line.get(2)) <= 0) {
+            Thread.sleep(1);
+
+          } else{
+            Thread.sleep(ChronoUnit.MILLIS.between(LocalDateTime.now(), cm.getTimestamp()));
+          }
+        } catch (InterruptedException | IllegalArgumentException e) {
           LOGGER.error(e.getMessage());
         }
+        return Optional.of(cm);
+      } else {
+        LOGGER.error(line.get(1) + "Is not a valid licenseplate. LicensePlate must match ^[0-9]-[A-" +
+                "Z]{3}-[0-9]{3}" + " Check your csv file.");
       }
-      if (scanner.hasNext()) {
-        List<String> line = parseLine(scanner.nextLine());
-
-        if (line.get(1).matches("^[0-9]-[A-Z]{3}-[0-9]{3}")) {
-          var cm = new CameraMessage(Integer.parseInt(line.get(0)), line.get(1),
-                                     LocalDateTime.now().plusSeconds(Long.parseLong(line.get(2)) / 1000));
-          try {
-            Thread.sleep(ChronoUnit.MILLIS.between(LocalDateTime.now(), cm.getTimestamp()));
-          } catch (InterruptedException e) {
-            LOGGER.error(e.getMessage());
-          }
-          return Optional.of(cm);
-        } else {
-          LOGGER.error(line.get(1) + "Is not a valid licenseplate. LicensePlate must match ^[0-9]-[A-" +
-                  "Z]{3}-[0-9]{3}" + " Check your csv file.");
-        }
-      }
-      scanner = null;
+    } while (scanner.hasNext());
     return Optional.empty();
   }
 }

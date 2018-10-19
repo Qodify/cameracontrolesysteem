@@ -2,26 +2,40 @@ package kdg.be.processor.Domain.offense;
 
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @Entity
 public class EmissionOffense extends Offense {
 
-  private final int FINE = 80;
-  @Id
-  @GeneratedValue
-  private Long Id;
-  private String licenseplate;
+//  private int id = 0;
   private int carEuronorm;
   private int emissionZoneEuronorm;
+  private double fine;
 
-  public EmissionOffense(String licenseplate, int carEuronorm, int emissionZoneEuronorm) {
+
+  public EmissionOffense(String licenseplate, int carEuronorm, int emissionZoneEuronorm, /*Fine fine*/ double fine) {
+//    this.id++;
     this.licenseplate = licenseplate;
     this.carEuronorm = carEuronorm;
     this.emissionZoneEuronorm = emissionZoneEuronorm;
+    this.fine = fine;
+  }
+
+//  public int getId() {
+//    return id;
+//  }
+//
+//  public void setId(int id) {
+//    this.id = id;
+//  }
+
+  public double getFine() {
+    return fine;
+  }
+
+  public void setFine(double fine) {
+    this.fine = fine;
   }
 
   public String getLicenseplate() {
@@ -51,10 +65,10 @@ public class EmissionOffense extends Offense {
   @Override
   public String toString() {
     return "EmissionOffense{" +
-        "Id=" + Id +
-        ", licenseplate='" + licenseplate + '\'' +
-        ", carEuronorm=" + carEuronorm +
-        ", emissionZoneEuronorm=" + emissionZoneEuronorm +
-        '}';
+            "Id=" + super.Id +
+            ", licenseplate='" + licenseplate + '\'' +
+            ", carEuronorm=" + carEuronorm +
+            ", emissionZoneEuronorm=" + emissionZoneEuronorm +
+            '}';
   }
 }

@@ -1,14 +1,18 @@
 package kdg.be.processor.Domain.offense;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-//properder dan later een enum aan te passen
 @Entity
+@Table(name = "OFFENSES")
 public abstract class Offense {
   @Id
   @GeneratedValue
-  private Long Id;
-  private double bedrag;
+  protected Long Id;
+  protected String licenseplate;
+  protected double fine;
+//
+//  @OneToOne(fetch = FetchType.LAZY, optional = false)
+//  @JoinColumn(name = "fine_id")
+//  protected Fine fine;
+
 }

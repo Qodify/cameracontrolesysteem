@@ -19,28 +19,24 @@ import java.util.Optional;
 @Component
 @ConditionalOnProperty(name = "MessengerType", havingValue = "qm")
 public class QueueMessenger implements IMessenger {
-  private static final Logger LOGGER = LoggerFactory.getLogger(QueueMessenger.class);
 
-  @Autowired
-  private RabbitTemplate rabbitTemplate;
+  private static final Logger LOGGER = LoggerFactory.getLogger(QueueMessenger.class);
+  private final RabbitTemplate rabbitTemplate;
 
   @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-  public QueueMessenger(IMessageGenerator messageGenerator) {
+  @Autowired
+  public QueueMessenger(IMessageGenerator messageGenerator, RabbitTemplate rabbitTemplate) {
+    this.rabbitTemplate = rabbitTemplate;
   }
-
 
   @Override
   public void sendMessage(Optional<CameraMessage> message) {
-    CameraMessageDTO cmDTO;
-    String xml;
     try {
-      cmDTO = new CameraMessageDTO(message.orElseThrow(IllegalStateException::new));
-      xml = cmDTO.toString();
       var objectMapper = new XmlMapper();
-      xml = objectMapper.writeValueAsString(cmDTO);
+      String xml = objectMapper.writeValueAsString(new CameraMessageDTO(message.orElseThrow(IllegalStateException::new)));
       rabbitTemplate.convertAndSend("MessageQueue", xml);
     } catch (IllegalStateException e) {
-      LOGGER.error("message is nullreferenced");
+      LOGGER.trace("Null message is not send to queue.");
     } catch (JsonProcessingException e) {
       LOGGER.error(e.getMessage());
     }

@@ -1,8 +1,6 @@
-package kdg.be.processor.BL.offense;
+package kdg.be.processor.BL.listener;
 
 import kdg.be.processor.Domain.cameramessage.CameraMessage;
-import kdg.be.processor.Domain.perception.CameraPercept;
-import kdg.be.processor.Domain.perception.LicensePlatePercept;
 import org.springframework.stereotype.Component;
 
 @Component
