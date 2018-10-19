@@ -9,10 +9,10 @@ public class SpeedingOffense extends Offense {
   private int speedLimit;
   private double carSpeed;
 
-  public SpeedingOffense(String licenseplate, int speedLimit, double carSpeed, double fine) {
-    this.fine = fine;
+  public SpeedingOffense(String licenseplate, int speedLimit, double carSpeed) {
     this.licenseplate = licenseplate;
     this.speedLimit = speedLimit;
     this.carSpeed = carSpeed;
+
   }
 }

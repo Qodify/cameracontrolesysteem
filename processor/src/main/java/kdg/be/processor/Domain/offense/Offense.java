@@ -1,6 +1,9 @@
 package kdg.be.processor.Domain.offense;
 
+import kdg.be.processor.Domain.fine.Fine;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "OFFENSES")
@@ -9,10 +12,7 @@ public abstract class Offense {
   @GeneratedValue
   protected Long Id;
   protected String licenseplate;
-  protected double fine;
-//
-//  @OneToOne(fetch = FetchType.LAZY, optional = false)
-//  @JoinColumn(name = "fine_id")
-//  protected Fine fine;
+  protected LocalDate timestamp;
+  //
 
 }

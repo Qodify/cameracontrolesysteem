@@ -1,6 +1,7 @@
 package kdg.be.processor.UI.controller;
 
-import kdg.be.processor.DAL.OffenseRepository;
+import kdg.be.processor.DAL.FineRepository;
+import kdg.be.processor.Domain.fine.Fine;
 import kdg.be.processor.Domain.offense.EmissionOffense;
 import kdg.be.processor.Domain.offense.SpeedingOffense;
 import kdg.be.processor.ProcessorApplication;
@@ -17,26 +18,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MvcController {
 
-  private final OffenseRepository offenseRepo;
+  private final FineRepository fineRepository;
   private static final Logger LOGGER = LoggerFactory.getLogger(ProcessorApplication.class);
 
   @Autowired
-  public MvcController(OffenseRepository offenseRepo) {
-    this.offenseRepo = offenseRepo;
+  public MvcController(FineRepository offenseRepo) {
+    this.fineRepository = offenseRepo;
   }
 
   @GetMapping("/offenses")
   public String fine(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
 
     //testgegevens
-    offenseRepo.save(new EmissionOffense("1-AAA-111", 3, 4, 345));
-    offenseRepo.save(new EmissionOffense("1-AAB-111", 2, 4, 345));
-    offenseRepo.save(new EmissionOffense("1-AAC-111", 1, 4, 345));
-    offenseRepo.save(new SpeedingOffense("1-BBB-111", 50, 70, 65));
-    offenseRepo.save(new SpeedingOffense("1-BBA-111", 50, 70, 65));
-    offenseRepo.save(new SpeedingOffense("1-BBC-111", 50, 70, 65));
+    fineRepository.save(new Fine(345, new EmissionOffense("1-ABC-123", 3, 4)));
 
-    model.addAttribute("offenses", offenseRepo.findAll());
+    model.addAttribute("offenses", fineRepository.findAll());
 
     return "offenses";
   }

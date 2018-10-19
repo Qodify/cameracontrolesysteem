@@ -11,15 +11,13 @@ public class EmissionOffense extends Offense {
 //  private int id = 0;
   private int carEuronorm;
   private int emissionZoneEuronorm;
-  private double fine;
 
 
-  public EmissionOffense(String licenseplate, int carEuronorm, int emissionZoneEuronorm, /*Fine fine*/ double fine) {
+  public EmissionOffense(String licenseplate, int carEuronorm, int emissionZoneEuronorm) {
 //    this.id++;
     this.licenseplate = licenseplate;
     this.carEuronorm = carEuronorm;
     this.emissionZoneEuronorm = emissionZoneEuronorm;
-    this.fine = fine;
   }
 
 //  public int getId() {
@@ -29,14 +27,6 @@ public class EmissionOffense extends Offense {
 //  public void setId(int id) {
 //    this.id = id;
 //  }
-
-  public double getFine() {
-    return fine;
-  }
-
-  public void setFine(double fine) {
-    this.fine = fine;
-  }
 
   public String getLicenseplate() {
     return licenseplate;

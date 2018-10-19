@@ -3,8 +3,10 @@ package kdg.be.processor.BL.manager;
 import be.kdg.sa.services.CameraNotFoundException;
 import be.kdg.sa.services.InvalidLicensePlateException;
 import be.kdg.sa.services.LicensePlateNotFoundException;
-import kdg.be.processor.DAL.OffenseRepository;
+import kdg.be.processor.DAL.FineRepository;
+import kdg.be.processor.Domain.fine.Fine;
 import kdg.be.processor.Domain.offense.EmissionOffense;
+import kdg.be.processor.Domain.offense.Offense;
 import kdg.be.processor.Domain.offense.SpeedingOffense;
 import kdg.be.processor.Domain.perception.CameraPercept;
 import kdg.be.processor.Domain.perception.LicensePlatePercept;
@@ -23,20 +25,21 @@ public class OffenseManager {
   private static final Logger LOGGER = LoggerFactory.getLogger(OffenseManager.class);
   @Value("${speedingFineFactor:30}")
   private double speedingFineFactor;
-  private OffenseRepository offenseRepo;
+  private FineRepository fineRepository;
+  private FineManager fineManager;
 
   @Autowired
-  public OffenseManager(OffenseRepository offenseRepo) {
-    this.offenseRepo = offenseRepo;
-
+  public OffenseManager(FineRepository fineRepository, FineManager fineManager) {
+    this.fineRepository = fineRepository;
+    this.fineManager = fineManager;
   }
 
   public void calcEmissionOffense(Optional<LicensePlatePercept> lpp, Optional<CameraPercept> cp) {
     try {
       if (lpp.orElseThrow(IllegalStateException::new).getEuroNumber()
               < cp.orElseThrow(IllegalStateException::new).getEuroNorm()) {
-        var offense = new EmissionOffense(lpp.get().getPlateId(), lpp.get().getEuroNumber(), cp.get().getEuroNorm(), 345);
-        offenseRepo.save(offense);
+        var o = new EmissionOffense(lpp.get().getPlateId(), lpp.get().getEuroNumber(), cp.get().getEuroNorm());
+        fineManager.add(o);
       }
     } catch (LicensePlateNotFoundException | InvalidLicensePlateException | IllegalStateException
             | CameraNotFoundException | InvalidDataAccessApiUsageException e) {
@@ -44,16 +47,13 @@ public class OffenseManager {
     }
   }
 
+  public void save(Fine fine) {
+    try {
+      fineRepository.save();
+    } catch () {
 
-  public void calcSpeedingOffense(List<CameraPercept> cpList) {
-    //bedrag = (snelheid – maximaal toegelaten snelheid in de zone) * snelheid boetefacto
+    }
   }
 
-  public void addEmissionOffense(EmissionOffense emissionOffense) {
-    offenseRepo.save(emissionOffense);
-  }
 
-  public void addSpeedingOffense(SpeedingOffense speedingOffense, double speedingFineFactor) {
-    offenseRepo.save(speedingOffense);
-  }
 }
