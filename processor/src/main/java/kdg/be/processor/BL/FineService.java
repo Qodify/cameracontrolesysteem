@@ -8,5 +8,5 @@ public class FineService {
   public FineService(FineRepository fineRepository) {
     this.fineRepository = fineRepository;
   }
-  public
+
 }

@@ -42,5 +42,6 @@ public class RestController {
   public ResponseEntity<Fine> loadGreeting(@PathVariable Long id) throws Exception {
 //    Fine f = .load(id);
 //    return new ResponseEntity<>(modelMapper.map(greeting, GreetingDTO.class), HttpStatus.OK);
+    return null;
   }
 }

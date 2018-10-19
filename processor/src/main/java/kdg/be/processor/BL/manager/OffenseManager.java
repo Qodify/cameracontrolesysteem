@@ -48,11 +48,11 @@ public class OffenseManager {
   }
 
   public void save(Fine fine) {
-    try {
-      fineRepository.save();
-    } catch () {
-
-    }
+//    try {
+//      fineRepository.save();
+//    } catch () {
+//
+//    }
   }
 
 
