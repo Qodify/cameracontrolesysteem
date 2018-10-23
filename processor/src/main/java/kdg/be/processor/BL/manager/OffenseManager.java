@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,7 +39,8 @@ public class OffenseManager {
     try {
       if (lpp.orElseThrow(IllegalStateException::new).getEuroNumber()
               < cp.orElseThrow(IllegalStateException::new).getEuroNorm()) {
-        var o = new EmissionOffense(lpp.get().getPlateId(), lpp.get().getEuroNumber(), cp.get().getEuroNorm());
+        var o = new EmissionOffense(LocalDateTime.now(), lpp.get().getPlateId(), lpp.get().getEuroNumber(),
+                cp.get().getEuroNorm());
         fineManager.add(o);
       }
     } catch (LicensePlateNotFoundException | InvalidLicensePlateException | IllegalStateException

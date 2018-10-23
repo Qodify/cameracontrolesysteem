@@ -1,8 +1,10 @@
 package kdg.be.processor.Domain.offense;
 
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+@Entity(name = "speeding_offenses")
+@DiscriminatorValue("S")
 
 public class SpeedingOffense extends Offense {
 
@@ -13,6 +15,21 @@ public class SpeedingOffense extends Offense {
     this.licenseplate = licenseplate;
     this.speedLimit = speedLimit;
     this.carSpeed = carSpeed;
+  }
 
+  public int getSpeedLimit() {
+    return speedLimit;
+  }
+
+  public void setSpeedLimit(int speedLimit) {
+    this.speedLimit = speedLimit;
+  }
+
+  public double getCarSpeed() {
+    return carSpeed;
+  }
+
+  public void setCarSpeed(double carSpeed) {
+    this.carSpeed = carSpeed;
   }
 }

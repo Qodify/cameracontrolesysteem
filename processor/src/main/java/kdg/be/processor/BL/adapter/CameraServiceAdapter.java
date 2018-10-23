@@ -92,7 +92,6 @@ public class CameraServiceAdapter {
         cp.setLatitude(latNode.asDouble());
         JsonNode longNode = locationsNode.get("long");
         cp.setLongitude(longNode.asDouble());
-        System.out.println(cp);
       }
 
       return cp;

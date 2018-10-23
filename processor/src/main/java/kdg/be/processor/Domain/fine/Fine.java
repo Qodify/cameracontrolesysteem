@@ -4,6 +4,7 @@ import kdg.be.processor.Domain.offense.Offense;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -11,25 +12,67 @@ public class Fine {
 
   @Id
   @GeneratedValue
-  private int id;
-  private double bedrag;
+  private Long id;
+  private double amount;
+  private boolean approved;
+  private String updateAmountMotivation;
+  private LocalDateTime timestamp;
+
 
   @JoinColumn(name = "fk_offenseId")
   @OneToOne(cascade = CascadeType.ALL)
   private Offense offense;
 
 
-  public Fine(Offense offense , double bedrag) {
+  public Fine(Offense offense, double amount, LocalDateTime timestamp) {
+    this.approved = false;
     this.offense = offense;
-    this.bedrag = bedrag;
+    this.amount = amount;
+    this.timestamp = timestamp;
   }
 
-  public double getBedrag() {
-    return bedrag;
+  public Fine(double amount, boolean approved, Offense offense) {
+    this.amount = amount;
+    this.approved = approved;
+    this.offense = offense;
   }
 
-  public void setBedrag(double bedrag) {
-    this.bedrag = bedrag;
+  public Fine(double amount, String updateAmountMotivation, Offense offense) {
+    this.amount = amount;
+    this.updateAmountMotivation = updateAmountMotivation;
+    this.offense = offense;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public boolean isApproved() {
+    return approved;
+  }
+
+  public void setApproved(boolean approved) {
+    this.approved = approved;
+  }
+
+  public String getUpdateAmountMotivation() {
+    return updateAmountMotivation;
+  }
+
+  public void setUpdateAmountMotivation(String updateAmountMotivation) {
+    this.updateAmountMotivation = updateAmountMotivation;
+  }
+
+  public double getAmount() {
+    return amount;
+  }
+
+  public void setAmount(double amount) {
+    this.amount = amount;
   }
 
   public Offense getOffense() {
