@@ -11,21 +11,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EmissionOffenseListener implements IReceiverListener {
+public class SpeedingOffenseListener implements IReceiverListener {
 
   private LicensePlateServiceAdapter licensePlateServiceAdapter;
   private CameraServiceAdapter cameraServiceAdapter;
   private OffenseManager offenseManager;
 
   @Autowired
-  public EmissionOffenseListener(LicensePlateServiceAdapter licensePlateServiceAdapter, CameraServiceAdapter cameraServiceAdapter, OffenseManager offenseManager) {
+  public SpeedingOffenseListener(LicensePlateServiceAdapter licensePlateServiceAdapter, CameraServiceAdapter cameraServiceAdapter, OffenseManager offenseManager) {
     this.licensePlateServiceAdapter = licensePlateServiceAdapter;
     this.cameraServiceAdapter = cameraServiceAdapter;
     this.offenseManager = offenseManager;
   }
-
   @Override
   public void OnMessageReceived(CameraMessage cm) throws CameraNotFoundException, LicensePlateNotFoundException, InvalidLicensePlateException {
-    offenseManager.calcEmissionOffense(licensePlateServiceAdapter.get(cm.getLicenseplate()), cameraServiceAdapter.get(cm.getId()));
+
+    offenseManager.checkSpeedingOffense(licensePlateServiceAdapter.get(cm.getLicenseplate()), cameraServiceAdapter.get(cm.getId()));
   }
 }

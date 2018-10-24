@@ -23,6 +23,8 @@ public class Fine {
   @OneToOne(cascade = CascadeType.ALL)
   private Offense offense;
 
+  public Fine() {
+  }
 
   public Fine(Offense offense, double amount, LocalDateTime timestamp) {
     this.approved = false;

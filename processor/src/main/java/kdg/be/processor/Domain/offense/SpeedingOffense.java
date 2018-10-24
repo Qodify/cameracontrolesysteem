@@ -2,22 +2,29 @@ package kdg.be.processor.Domain.offense;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity(name = "speeding_offenses")
 @DiscriminatorValue("S")
 
 public class SpeedingOffense extends Offense {
 
-  private int speedLimit;
-  private double carSpeed;
 
-  public SpeedingOffense(String licenseplate, int speedLimit, double carSpeed) {
+  private double speedLimit;
+  private double measuredSpeed;
+  private LocalDateTime timestamp;
+  private int cameraId;
+
+  public SpeedingOffense(String licenseplate, int cameraId, double measuredSpeed, double speedLimit, LocalDateTime timestamp) {
     this.licenseplate = licenseplate;
+    this.cameraId = cameraId;
     this.speedLimit = speedLimit;
-    this.carSpeed = carSpeed;
+    this.measuredSpeed = measuredSpeed;
+    this.timestamp = timestamp;
+
   }
 
-  public int getSpeedLimit() {
+  public double getSpeedLimit() {
     return speedLimit;
   }
 
@@ -26,10 +33,10 @@ public class SpeedingOffense extends Offense {
   }
 
   public double getCarSpeed() {
-    return carSpeed;
+    return measuredSpeed;
   }
 
-  public void setCarSpeed(double carSpeed) {
-    this.carSpeed = carSpeed;
+  public void setCarSpeed(double measuredSpeed) {
+    this.measuredSpeed = measuredSpeed;
   }
 }

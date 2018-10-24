@@ -1,5 +1,7 @@
 package kdg.be.processor.Domain.perception;
 
+import java.time.LocalDateTime;
+
 public class CameraPercept {
 
 
@@ -11,6 +13,9 @@ public class CameraPercept {
   private int connectedCameraId;
   private double distance;
   private double speedLimit;
+  private LocalDateTime timestamp;
+
+
 
   public CameraPercept() {
   }
@@ -27,6 +32,21 @@ public class CameraPercept {
         '}';
   }
 
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public LocalDateTime getTimestamp() {
+    return timestamp;
+  }
+
+  public void setTimestamp(LocalDateTime timestamp) {
+    this.timestamp = timestamp;
+  }
   public int getConnectedCameraId() {
     return connectedCameraId;
   }
