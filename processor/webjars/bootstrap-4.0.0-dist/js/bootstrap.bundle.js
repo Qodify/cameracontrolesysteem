@@ -3777,7 +3777,7 @@ var Popper = function () {
     }
 
     /**
-     * Schedule an update, it will run on the next UI update available
+     * Schedule an update, it will run on the next frontend update available
      * @method scheduleUpdate
      * @memberof Popper
      */

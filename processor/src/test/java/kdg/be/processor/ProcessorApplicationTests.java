@@ -1,7 +1,6 @@
 package kdg.be.processor;
 
 import be.kdg.sa.services.CameraServiceProxy;
-import kdg.be.processor.BL.adapter.CameraServiceAdapter;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
