@@ -35,6 +35,7 @@ public class QueueMessenger implements IMessenger {
       var objectMapper = new XmlMapper();
       String xml = objectMapper.writeValueAsString(new CameraMessageDTO(message.orElseThrow(IllegalStateException::new)));
       rabbitTemplate.convertAndSend("MessageQueue", xml);
+      LOGGER.info(xml);
     } catch (IllegalStateException e) {
       LOGGER.trace("Null message is not send to queue.");
     } catch (JsonProcessingException e) {

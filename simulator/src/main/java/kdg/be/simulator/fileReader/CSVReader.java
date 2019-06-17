@@ -1,6 +1,5 @@
 package kdg.be.simulator.fileReader;
 
-import javafx.scene.Camera;
 import kdg.be.simulator.models.CameraMessage;
 import org.apache.commons.jexl3.JxltEngine;
 import org.springframework.stereotype.Component;
