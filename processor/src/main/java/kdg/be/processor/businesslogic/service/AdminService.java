@@ -10,8 +10,11 @@ import java.util.Optional;
 @Component
 public class AdminService {
 
-  @Autowired
-  private AdminRepository adminRepository;
+  private final AdminRepository adminRepository;
+
+  public AdminService(AdminRepository adminRepository) {
+    this.adminRepository = adminRepository;
+  }
 
   public Optional<Admin> load(Long id) {
     return adminRepository.findById((id));

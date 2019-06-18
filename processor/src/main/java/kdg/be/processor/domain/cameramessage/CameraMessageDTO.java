@@ -3,7 +3,7 @@ package kdg.be.processor.domain.cameramessage;
 
 import lombok.Data;
 
-@Data
+
 public class CameraMessageDTO {
   private int id;
   private String licenseplate;
@@ -25,4 +25,27 @@ public class CameraMessageDTO {
 
   }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLicenseplate() {
+        return licenseplate;
+    }
+
+    public void setLicenseplate(String licenseplate) {
+        this.licenseplate = licenseplate;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 }

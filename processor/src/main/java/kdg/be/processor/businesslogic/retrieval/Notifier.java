@@ -14,19 +14,19 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class MessageDelegator {
-  private static final Logger LOGGER = LoggerFactory.getLogger(MessageDelegator.class);
+public class Notifier {
+  private static final Logger LOGGER = LoggerFactory.getLogger(Notifier.class);
   private final List<IReceiverListener> listListener;
   private FineService fineService;
 
   @Autowired
-  public MessageDelegator(List<IReceiverListener> listListener, FineService fineService) {
+  public Notifier(List<IReceiverListener> listListener, FineService fineService) {
     this.listListener = listListener;
     this.fineService = fineService;
   }
 
 
-  void messageHandler(CameraMessage cm) {
+  void notifyListeners(CameraMessage cm) {
 
     listListener.stream()
             .map(

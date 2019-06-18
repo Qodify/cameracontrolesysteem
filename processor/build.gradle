@@ -17,7 +17,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'kdg.be'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 10
+sourceCompatibility = 8
 
 repositories {
     mavenCentral()
@@ -35,11 +35,20 @@ dependencies {
     compile('org.webjars:webjars-locator-core:0.35')
     compile('org.webjars:bootstrap:4.1.3')
     compile('org.webjars:jquery:3.0.0')
+
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    //compile('javax.xml.bind:jaxb-api:2.3.0')
+
+    //compile 'org.hibernate:hibernate-core:4.1.4.Final'
+    //compile 'javax.xml.bind:jaxb-api:2.3.0'
+    //compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.3.Final'
+
+
     implementation('org.springframework.boot:spring-boot-starter-web')
     compile group: 'org.modelmapper', name: 'modelmapper', version: '0.7.5'
     compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.0"
     testCompile('org.springframework.boot:spring-boot-starter-test')
+
     compile group: 'javax.json', name: 'javax.json-api', version: '1.0'
     compile group: 'org.glassfish', name: 'javax.json', version: '1.0.4'
     compile files('lib/camera-service-1.0.jar', 'lib/license-plate-service-1.0.jar')

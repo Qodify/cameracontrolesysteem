@@ -18,7 +18,7 @@ import java.util.Optional;
 public class FineService {
 
   private static final double BEDRAG = 123;
-  @Value("${emissionFineFactor:1.0")
+  @Value("${emissionFineFactor:1.0}")
   private double emissionFineFactor;
 
   @Value("${speedingPlateFactor:1.0}")
@@ -33,8 +33,8 @@ public class FineService {
   }
 
   public List<Fine> getFinesFilteredByDate(String ldd1, String ldd2) {
-    var startDate = LocalDateTime.parse(ldd1, formatter);
-    var endDate = LocalDateTime.parse(ldd2, formatter);
+    LocalDateTime startDate = LocalDateTime.parse(ldd1, formatter);
+    LocalDateTime endDate = LocalDateTime.parse(ldd2, formatter);
     ArrayList<Fine> fines = new ArrayList<>();
     loadAll()
             .stream()

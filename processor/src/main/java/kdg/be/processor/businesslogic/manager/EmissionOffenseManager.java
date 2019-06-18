@@ -25,15 +25,15 @@ public class EmissionOffenseManager implements IOffenseManager {
   private static final Logger LOGGER = LoggerFactory.getLogger(EmissionOffenseManager.class);
 
   private List<EmissionOffense> emissionOffenseList;
-  private FineService fineService;
+
+  private final FineService fineService;
 
   @Value(value = "${graceperiodinseconds}")
   private Long gracePeriodInSeconds;
 
-  @Autowired
   public EmissionOffenseManager(FineService fineService) {
     emissionOffenseList = new LinkedList<>();
-    this.fineService = fineService;
+      this.fineService = fineService;
   }
 
   /**
@@ -47,7 +47,7 @@ public class EmissionOffenseManager implements IOffenseManager {
     try {
       if (lpp.orElseThrow(IllegalStateException::new).getEuroNumber()
               < cp.orElseThrow(IllegalStateException::new).getEuroNorm()) {
-        var o = new EmissionOffense(LocalDateTime.now(), lpp.get().getPlateId(), lpp.get().getEuroNumber(), cp.get().getEuroNorm());
+        EmissionOffense o = new EmissionOffense(LocalDateTime.now(), lpp.get().getPlateId(), lpp.get().getEuroNumber(), cp.get().getEuroNorm());
 
         emissionOffenseList.add(o);
         for (EmissionOffense e : emissionOffenseList) {

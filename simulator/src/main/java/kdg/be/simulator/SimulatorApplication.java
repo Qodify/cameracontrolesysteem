@@ -17,16 +17,7 @@ import java.time.LocalTime;
 @EnableRabbit
 public class SimulatorApplication {
 
-    @Autowired
-    private RandomMessageGenerator randomMessageGenerator;
-
     public static void main(String[] args) {
-
         SpringApplication.run(SimulatorApplication.class, args);
-
     }
-
-
-
-
 }

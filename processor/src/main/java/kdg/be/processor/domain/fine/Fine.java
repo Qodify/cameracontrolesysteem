@@ -84,4 +84,8 @@ public class Fine {
   public void setOffense(Offense offense) {
     this.offense = offense;
   }
+
+  public LocalDateTime getTimestamp() {
+    return timestamp;
+  }
 }

@@ -6,7 +6,6 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Data
 public class CameraMessage {
   private int id;
   private String licenseplate;
@@ -48,4 +47,35 @@ public class CameraMessage {
   }
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLicenseplate() {
+        return licenseplate;
+    }
+
+    public void setLicenseplate(String licenseplate) {
+        this.licenseplate = licenseplate;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public int getDelay() {
+        return delay;
+    }
+
+    public void setDelay(int delay) {
+        this.delay = delay;
+    }
 }

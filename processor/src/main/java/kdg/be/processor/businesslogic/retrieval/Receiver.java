@@ -17,11 +17,11 @@ import org.springframework.stereotype.Component;
 public class Receiver {
   private static final Logger LOGGER = LoggerFactory.getLogger(Receiver.class);
 
-  private MessageDelegator messageDelegator;
+  private Notifier notifier;
 
   @Autowired
-  public Receiver(MessageDelegator messageDelegator) {
-    this.messageDelegator = messageDelegator;
+  public Receiver(Notifier notifier) {
+    this.notifier = notifier;
   }
 
   @Bean
@@ -43,11 +43,11 @@ public class Receiver {
     LOGGER.info("Received xml <" + xmlMessage + ">");
     try {
       XmlMapper xmlMapper = new XmlMapper();
-      var cmDTO = xmlMapper.readValue(xmlMessage, CameraMessageDTO.class);
-      var cm = new CameraMessage(cmDTO);
+      CameraMessageDTO cmDTO = xmlMapper.readValue(xmlMessage, CameraMessageDTO.class);
+      CameraMessage cm = new CameraMessage(cmDTO);
       LOGGER.info("Parced <" + cm.toString() + ">");
       //TODO: niet direct naar
-      messageDelegator.messageHandler(cm);
+      notifier.notifyListeners(cm);
     } catch (Exception e) {
       LOGGER.error("Incoming Message mismatches with parsing rules, check the toString method of the messageDTO " + e.getMessage());
     }

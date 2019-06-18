@@ -39,7 +39,7 @@ public class SpeedingOffenseManager implements IOffenseManager {
       CameraPercept cameraPercept = cp.orElseThrow(IllegalStateException::new);
       String plateId = lpp.orElseThrow(IllegalStateException::new).getPlateId();
       if (cameraMessages.containsKey(plateId)) {
-        var o = calcSpeedingOffense(cameraMessages.remove(plateId), cp.get(), plateId);
+        Offense o = calcSpeedingOffense(cameraMessages.remove(plateId), cp.get(), plateId);
         if (o != null) return Optional.of(o);
       } else if (cameraPercept.getSpeedLimit() != 0) {
         cameraMessages.put(plateId, cameraPercept);

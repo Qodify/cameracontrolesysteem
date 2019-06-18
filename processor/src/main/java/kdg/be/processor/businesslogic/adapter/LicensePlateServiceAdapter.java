@@ -26,8 +26,8 @@ public class LicensePlateServiceAdapter {
 
   public Optional<LicensePlatePercept> get(String licensePLate) throws InvalidLicensePlateException, LicensePlateNotFoundException {
     try {
-      var objectMapper = new ObjectMapper();
-      var lpp = objectMapper.readValue(licensePlateServiceProxy.get(licensePLate), LicensePlatePercept.class);
+      ObjectMapper objectMapper = new ObjectMapper();
+      LicensePlatePercept lpp = objectMapper.readValue(licensePlateServiceProxy.get(licensePLate), LicensePlatePercept.class);
       LOGGER.trace(lpp.toString());
       return Optional.of(lpp);
     } catch (IOException e) {

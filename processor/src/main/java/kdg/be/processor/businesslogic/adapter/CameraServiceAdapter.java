@@ -19,6 +19,9 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+/**
+ *
+ */
 @Component
 public class CameraServiceAdapter {
   private static final Logger LOGGER = LoggerFactory.getLogger(CameraServiceAdapter.class);
@@ -61,6 +64,7 @@ public class CameraServiceAdapter {
       JsonNode node = null;
       try {
         node = codec.readTree(parser);
+
       } catch (IOException e) {
         LOGGER.error(e.getMessage());
       }
