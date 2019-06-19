@@ -26,7 +26,7 @@ public class MvcFineController {
   public String index(Model model) {
 
     model.addAttribute("eff", fineService.getEmissionFineFactor());
-    model.addAttribute("sff", fineService.getSpeedingPlateFactor());
+    model.addAttribute("sff", fineService.getSpeedingFineFactor());
     return "finefactors";
   }
 

@@ -1,5 +1,6 @@
 package kdg.be.processor.businesslogic.retrieval;
 
+import be.kdg.sa.services.CameraNotFoundException;
 import kdg.be.processor.businesslogic.listener.OffenseListener;
 import kdg.be.processor.businesslogic.service.FineService;
 import kdg.be.processor.domain.cameramessage.CameraMessage;
@@ -35,6 +36,8 @@ public class Notifier {
                         return l.onMessageReceived(cm);
                       } catch (IOException e) {
                         LOGGER.warn(e.getMessage() + " : " + l.toString() + " : " + cm);
+                      } catch(CameraNotFoundException cmnfe){
+                          LOGGER.warn(cmnfe.getMessage());
                       }
                       return Optional.<Offense>empty();
                     }
@@ -42,8 +45,6 @@ public class Notifier {
             .filter(Optional::isPresent)
             .map(Optional::get)
             .forEach(fineService::add);
-
-
   }
 }
 

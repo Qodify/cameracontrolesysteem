@@ -1,9 +1,6 @@
 package kdg.be.processor.domain.cameramessage;
 
 
-
-import lombok.Data;
-
 import java.time.LocalDateTime;
 
 public class CameraMessage {
@@ -40,6 +37,7 @@ public class CameraMessage {
     this.timestamp = timestamp;
 
   }
+
   public CameraMessage(CameraMessageDTO cmDTO) {
     this.id = cmDTO.getId();
     this.licenseplate = cmDTO.getLicenseplate();
