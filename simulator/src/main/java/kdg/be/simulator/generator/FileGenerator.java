@@ -35,12 +35,10 @@ public class FileGenerator implements IMessageGenerator {
   @Autowired
   public FileGenerator(CSVReader cr) {
     this.cr = cr;
-  }
-
-  @PostConstruct
-  public void test() {
     cr.Initialize();
   }
+
+
 
 
   @Override
@@ -58,7 +56,7 @@ public class FileGenerator implements IMessageGenerator {
 
       if (line.get(1).matches("^[0-9]-[A-Z]{3}-[0-9]{3}")) {
 
-        var cm = new CameraMessage(Integer.parseInt(line.get(0)), line.get(1),
+        CameraMessage cm = new CameraMessage(Integer.parseInt(line.get(0)), line.get(1),
                 LocalDateTime.now().plusSeconds(Long.parseLong(line.get(2)) / 1000));
 
         try {

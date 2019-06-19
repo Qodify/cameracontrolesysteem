@@ -1,16 +1,14 @@
-package kdg.be.processor.businesslogic.manager;
+package kdg.be.processor.businesslogic.service;
 
 import be.kdg.sa.services.CameraNotFoundException;
 import be.kdg.sa.services.InvalidLicensePlateException;
 import be.kdg.sa.services.LicensePlateNotFoundException;
-import kdg.be.processor.businesslogic.service.FineService;
 import kdg.be.processor.domain.offense.EmissionOffense;
 import kdg.be.processor.domain.offense.Offense;
 import kdg.be.processor.domain.perception.CameraPercept;
 import kdg.be.processor.domain.perception.LicensePlatePercept;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Component;
@@ -21,8 +19,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class EmissionOffenseManager implements IOffenseManager {
-  private static final Logger LOGGER = LoggerFactory.getLogger(EmissionOffenseManager.class);
+public class EmissionOffenseService implements OffenseService {
+  private static final Logger LOGGER = LoggerFactory.getLogger(EmissionOffenseService.class);
 
   private List<EmissionOffense> emissionOffenseList;
 
@@ -31,7 +29,7 @@ public class EmissionOffenseManager implements IOffenseManager {
   @Value(value = "${graceperiodinseconds}")
   private Long gracePeriodInSeconds;
 
-  public EmissionOffenseManager(FineService fineService) {
+  public EmissionOffenseService(FineService fineService) {
     emissionOffenseList = new LinkedList<>();
       this.fineService = fineService;
   }

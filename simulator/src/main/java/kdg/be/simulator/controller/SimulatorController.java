@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-@EnableScheduling
 @Component
 public class SimulatorController {
 
@@ -27,7 +26,6 @@ public class SimulatorController {
     this.messenger = messenger;
   }
 
-  @Scheduled(fixedRate = 5000)
   @PostConstruct
   private void generate() {
     messenger.sendMessage(messageGenerator.generate());

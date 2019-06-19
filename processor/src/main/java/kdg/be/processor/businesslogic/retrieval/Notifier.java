@@ -1,6 +1,6 @@
 package kdg.be.processor.businesslogic.retrieval;
 
-import kdg.be.processor.businesslogic.listener.IReceiverListener;
+import kdg.be.processor.businesslogic.listener.OffenseListener;
 import kdg.be.processor.businesslogic.service.FineService;
 import kdg.be.processor.domain.cameramessage.CameraMessage;
 import kdg.be.processor.domain.offense.Offense;
@@ -16,19 +16,19 @@ import java.util.Optional;
 @Component
 public class Notifier {
   private static final Logger LOGGER = LoggerFactory.getLogger(Notifier.class);
-  private final List<IReceiverListener> listListener;
+  private final List<OffenseListener> listeners;
   private FineService fineService;
 
   @Autowired
-  public Notifier(List<IReceiverListener> listListener, FineService fineService) {
-    this.listListener = listListener;
+  public Notifier(List<OffenseListener> listeners, FineService fineService) {
+    this.listeners = listeners;
     this.fineService = fineService;
   }
 
 
   void notifyListeners(CameraMessage cm) {
 
-    listListener.stream()
+    listeners.stream()
             .map(
                     l -> {
                       try {

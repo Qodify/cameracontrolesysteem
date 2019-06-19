@@ -32,7 +32,7 @@ public class QueueMessenger implements IMessenger {
   @Override
   public void sendMessage(Optional<CameraMessage> message) {
     try {
-      var objectMapper = new XmlMapper();
+      XmlMapper objectMapper = new XmlMapper();
       String xml = objectMapper.writeValueAsString(new CameraMessageDTO(message.orElseThrow(IllegalStateException::new)));
       rabbitTemplate.convertAndSend("MessageQueue", xml);
       LOGGER.info(xml);

@@ -21,7 +21,7 @@ bootJar {
 
 group = 'kdg.be'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 10
+sourceCompatibility = 8
 
 repositories {
     mavenCentral()

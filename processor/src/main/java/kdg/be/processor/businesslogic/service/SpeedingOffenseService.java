@@ -1,9 +1,8 @@
-package kdg.be.processor.businesslogic.manager;
+package kdg.be.processor.businesslogic.service;
 
 import be.kdg.sa.services.CameraNotFoundException;
 import be.kdg.sa.services.InvalidLicensePlateException;
 import be.kdg.sa.services.LicensePlateNotFoundException;
-import kdg.be.processor.businesslogic.service.FineService;
 import kdg.be.processor.domain.offense.Offense;
 import kdg.be.processor.domain.offense.SpeedingOffense;
 import kdg.be.processor.domain.perception.CameraPercept;
@@ -19,9 +18,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 @Component
-public class SpeedingOffenseManager implements IOffenseManager {
+public class SpeedingOffenseService implements OffenseService {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(SpeedingOffenseManager.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(SpeedingOffenseService.class);
 
   @Value("${speedingFineFactor:30}")
   private double speedingFineFactor;
@@ -30,7 +29,7 @@ public class SpeedingOffenseManager implements IOffenseManager {
   private Map<String, CameraPercept> cameraMessages;
 
   @Autowired
-  public SpeedingOffenseManager() {
+  public SpeedingOffenseService() {
     cameraMessages = new HashMap<>();
   }
 

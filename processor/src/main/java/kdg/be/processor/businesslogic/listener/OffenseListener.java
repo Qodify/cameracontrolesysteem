@@ -6,6 +6,6 @@ import kdg.be.processor.domain.offense.Offense;
 import java.io.IOException;
 import java.util.Optional;
 
-public interface IReceiverListener {
+public interface OffenseListener {
   Optional<Offense> onMessageReceived(CameraMessage cm) throws IOException;
 }
