@@ -1,10 +1,9 @@
 package kdg.be.simulator.messenger;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import kdg.be.simulator.generator.IMessageGenerator;
+import kdg.be.simulator.generator.MessageGenerator;
 import kdg.be.simulator.models.CameraMessage;
 import kdg.be.simulator.models.CameraMessageDTO;
 import org.slf4j.Logger;
@@ -18,22 +17,22 @@ import java.util.Optional;
 
 @Component
 @ConditionalOnProperty(name = "MessengerType", havingValue = "qm")
-public class QueueMessenger implements IMessenger {
+public class QueueMessenger implements Messenger {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(QueueMessenger.class);
   private final RabbitTemplate rabbitTemplate;
 
   @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
   @Autowired
-  public QueueMessenger(IMessageGenerator messageGenerator, RabbitTemplate rabbitTemplate) {
+  public QueueMessenger(MessageGenerator messageGenerator, RabbitTemplate rabbitTemplate) {
     this.rabbitTemplate = rabbitTemplate;
   }
 
   @Override
-  public void sendMessage(Optional<CameraMessage> message) {
+  public void sendMessage(CameraMessage message) {
     try {
       XmlMapper objectMapper = new XmlMapper();
-      String xml = objectMapper.writeValueAsString(new CameraMessageDTO(message.orElseThrow(IllegalStateException::new)));
+      String xml = objectMapper.writeValueAsString(new CameraMessageDTO(message));
       rabbitTemplate.convertAndSend("MessageQueue", xml);
       LOGGER.info(xml);
     } catch (IllegalStateException e) {

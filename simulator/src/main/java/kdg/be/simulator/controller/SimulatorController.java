@@ -1,34 +1,41 @@
 package kdg.be.simulator.controller;
 
-import kdg.be.simulator.messenger.IMessenger;
-import kdg.be.simulator.generator.IMessageGenerator;
-import kdg.be.simulator.messenger.QueueMessenger;
+import kdg.be.simulator.messenger.Messenger;
+import kdg.be.simulator.generator.MessageGenerator;
+import kdg.be.simulator.models.CameraMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
 @Component
-public class SimulatorController {
+public class SimulatorController implements GeneratorListener {
 
-  private IMessageGenerator messageGenerator;
-  private IMessenger messenger;
-  private static final Logger LOGGER = LoggerFactory.getLogger(SimulatorController.class);
+    @Autowired
+    private MessageGenerator generator;
+    @Autowired
+    private Messenger messenger;
 
-  @Autowired
-  @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-  public SimulatorController(IMessageGenerator messageGenerator, IMessenger messenger) {
-    this.messageGenerator = messageGenerator;
-    this.messenger = messenger;
-  }
+    private static final Logger LOGGER = LoggerFactory.getLogger(SimulatorController.class);
 
-  @PostConstruct
-  private void generate() {
-    messenger.sendMessage(messageGenerator.generate());
-  }
+    //@Autowired
+    //@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    @PostConstruct
+    public void startGenerating() {
+        generator.addListener(this);
+        try {
+            generator.generate();
+        } catch (InterruptedException e) {
+            LOGGER.warn("Thread.sleep() threw an exception: " + e.getMessage());
+        }
+    }
 
+
+    @Override
+    public void onMessageGenerated(CameraMessage cameraMessage) {
+        messenger.sendMessage(cameraMessage);
+
+    }
 }
