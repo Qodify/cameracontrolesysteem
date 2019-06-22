@@ -27,12 +27,10 @@ public class CameraServiceAdapter {
   private static final Logger LOGGER = LoggerFactory.getLogger(CameraServiceAdapter.class);
 
   private CameraServiceProxy cameraServiceProxy;
-
   @Autowired
   public CameraServiceAdapter(CameraServiceProxy cameraServiceProxy) {
     this.cameraServiceProxy = cameraServiceProxy;
   }
-
 
   public Optional<CameraPercept> get(int id) throws IOException, CameraNotFoundException {
     try {
@@ -40,7 +38,9 @@ public class CameraServiceAdapter {
       SimpleModule module = new SimpleModule("CustomCameraDeserializer");
       module.addDeserializer(CameraPercept.class, new CustomCameraDeserializer());
       objectMapper.registerModule(module);
+
       return Optional.of(objectMapper.readValue(cameraServiceProxy.get(id), CameraPercept.class));
+
     } catch (CameraNotFoundException e) {
       throw new CameraNotFoundException(id);
     } catch (IOException e) {

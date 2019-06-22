@@ -15,10 +15,12 @@ public class EmissionOffense extends Offense {
   private int emissionZoneEuronorm;
   private String NationalRegisterIdNumber;
 
+  public EmissionOffense() {
+  }
 
   public EmissionOffense(LocalDateTime timestamp, String licenseplate, int carEuronorm, int emissionZoneEuronorm, String nationalRegisterIdNumber) {
     this.NationalRegisterIdNumber = nationalRegisterIdNumber;
-    this.timestamp = timestamp;
+    super.timestamp = timestamp;
     this.licenseplate = licenseplate;
     this.carEuronorm = carEuronorm;
     this.emissionZoneEuronorm = emissionZoneEuronorm;
@@ -27,8 +29,9 @@ public class EmissionOffense extends Offense {
   public LocalDateTime getTimestamp() {
     return super.timestamp;
   }
+
   public void setTimestamp(LocalDateTime timestamp){
-    this.timestamp = timestamp;
+    super.timestamp = timestamp;
   }
 
   public String getLicenseplate() {

@@ -5,6 +5,8 @@ import kdg.be.processor.repository.FineRepository;
 import kdg.be.processor.domain.fine.Fine;
 import kdg.be.processor.domain.offense.EmissionOffense;
 import kdg.be.processor.domain.offense.Offense;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -17,6 +19,7 @@ import java.util.Optional;
 
 @Component
 public class FineService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(FineService.class);
 
     @Value("${emissionFineFactor:1.0}")
     private double emissionFineFactor;
@@ -65,9 +68,12 @@ public class FineService {
 
     public void add(Offense o) {
         if (o instanceof EmissionOffense)
-            fineRepository.save(new Fine((EmissionOffense) o, emissionFineFactor, LocalDateTime.now()));
+            LOGGER.info(fineRepository.save(new Fine((EmissionOffense) o,
+                    emissionFineFactor, LocalDateTime.now())).toString());
         else {
-            fineRepository.save(new Fine((SpeedingOffense) o, (((SpeedingOffense) o).getCarSpeed() - ((SpeedingOffense) o).getSpeedLimit()) * speedingFineFactor, LocalDateTime.now()));
+            LOGGER.info(fineRepository.save(new Fine((SpeedingOffense) o,
+                    (((SpeedingOffense) o).getCarSpeed() - ((SpeedingOffense) o).getSpeedLimit())
+                            * speedingFineFactor, LocalDateTime.now())).toString());
         }
 
     }

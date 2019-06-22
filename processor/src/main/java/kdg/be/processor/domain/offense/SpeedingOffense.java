@@ -12,9 +12,11 @@ public class SpeedingOffense extends Offense {
 
     private double speedLimit;
     private double measuredSpeed;
-    private LocalDateTime timestamp;
     private int cameraId1;
     private int cameraId2;
+
+    public SpeedingOffense() {
+    }
 
     public SpeedingOffense(String licenseplate, int cameraId1, int cameraId2, double measuredSpeed, double speedLimit, LocalDateTime timestamp) {
         this.cameraId2 = cameraId2;
@@ -22,8 +24,16 @@ public class SpeedingOffense extends Offense {
         this.cameraId1 = cameraId1;
         this.speedLimit = speedLimit;
         this.measuredSpeed = measuredSpeed;
-        this.timestamp = timestamp;
+        super.timestamp = timestamp;
 
+    }
+
+    public LocalDateTime getTimestamp() {
+        return super.timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        super.timestamp = timestamp;
     }
 
     public double getSpeedLimit() {

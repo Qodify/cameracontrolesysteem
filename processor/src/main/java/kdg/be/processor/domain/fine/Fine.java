@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class Fine {
 
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy=GenerationType.AUTO)
   private Long id;
   private double amount;
   private boolean approved;
@@ -24,6 +24,7 @@ public class Fine {
   private Offense offense;
 
   public Fine() {
+
   }
 
   public Fine(Offense offense, double amount, LocalDateTime timestamp) {

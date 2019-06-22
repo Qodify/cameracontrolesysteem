@@ -25,7 +25,7 @@ public class FileMessageGenerator implements MessageGenerator {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FileMessageGenerator.class);
 
-    @Value("${filePath:.//src//main//resources//textfiles//overtredingen.csv}")
+    @Value("${filePath:./src/main/resources/textfiles/overtredingen.csv}")
     private String filePath;
     private LinkedList<GeneratorListener> listeners;
 
@@ -46,28 +46,32 @@ public class FileMessageGenerator implements MessageGenerator {
                 }
             }
 
-            if (scanner != null) {
-                List<String> line = parseLine(scanner.nextLine());
-                if (line != null) {
-                    if (line.get(1).matches("^[0-9]-[A-Z]{3}-[0-9]{3}")) {
+            try {
+                if (scanner != null) {
+                    List<String> line = parseLine(scanner.nextLine());
+                    if (line != null) {
+                        if (line.get(1).matches("^[0-9]-[A-Z]{3}-[0-9]{3}")) {
 
-                        CameraMessage cm = new CameraMessage(Integer.parseInt(line.get(0)), line.get(1),
-                                LocalDateTime.now().plusSeconds(Long.parseLong(line.get(2)) / 1000));
+                            CameraMessage cm = new CameraMessage(Integer.parseInt(line.get(0)), line.get(1),
+                                    LocalDateTime.now().plusSeconds(Long.parseLong(line.get(2)) / 1000));
 
-                        if (Long.parseLong(line.get(2)) <= 0) {
-                            Thread.sleep(1);
+                            if (Long.parseLong(line.get(2)) <= 0) {
+                                Thread.sleep(1);
 
+                            } else {
+                                Thread.sleep(Duration.between(LocalDateTime.now(), cm.getTimestamp()).toMillis());
+                            }
+                            notifyListeners(cm);
                         } else {
-                            Thread.sleep(Duration.between(LocalDateTime.now(), cm.getTimestamp()).toMillis());
+                            LOGGER.error(line.get(1) + "Is not a valid licenseplate. LicensePlate must match ^[0-9]-[A-" +
+                                    "Z]{3}-[0-9]{3}" + " Check your csv file.");
                         }
-                        notifyListeners(cm);
-                    } else {
-                        LOGGER.error(line.get(1) + "Is not a valid licenseplate. LicensePlate must match ^[0-9]-[A-" +
-                                "Z]{3}-[0-9]{3}" + " Check your csv file.");
                     }
+                } else {
+                    LOGGER.error("scanner is null: " + getClass().getSimpleName());
                 }
-            } else {
-                LOGGER.error("scanner is null: " + getClass().getSimpleName());
+            } catch (IllegalArgumentException e) {
+                LOGGER.error(e.getMessage());
             }
 
         } while (Objects.requireNonNull(scanner).hasNext());
