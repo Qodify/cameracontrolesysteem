@@ -75,6 +75,7 @@ public class FileMessageGenerator implements MessageGenerator {
             }
 
         } while (Objects.requireNonNull(scanner).hasNext());
+
     }
 
 

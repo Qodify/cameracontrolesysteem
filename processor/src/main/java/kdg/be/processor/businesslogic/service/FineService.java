@@ -38,7 +38,7 @@ public class FineService {
     public List<Fine> getFinesFilteredByDate(String startDateStr, String endDateStr) {
         LocalDateTime startDate = LocalDateTime.parse(startDateStr, formatter);
         LocalDateTime endDate = LocalDateTime.parse(endDateStr, formatter);
-        ArrayList<Fine> fines = new ArrayList<>();
+        List<Fine> fines = new ArrayList<>();
         loadAll()
                 .stream()
                 .filter(x -> x.getTimestamp().isAfter(startDate) && x.getTimestamp().isBefore(endDate))

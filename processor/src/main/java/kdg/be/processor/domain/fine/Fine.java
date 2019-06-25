@@ -27,6 +27,8 @@ public class Fine {
 
   }
 
+
+
   public Fine(Offense offense, double amount, LocalDateTime timestamp) {
     this.approved = false;
     this.offense = offense;
