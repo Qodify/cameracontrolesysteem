@@ -21,21 +21,19 @@ import static org.springframework.http.HttpStatus.*;
 public class UserRestController {
 
   private AdminService adminService;
-  private ModelMapper modelMapper;
 
   @Autowired
-  public UserRestController(AdminService adminService, ModelMapper modelMapper) {
-    this.modelMapper = modelMapper;
+  public UserRestController(AdminService adminService) {
     this.adminService = adminService;
   }
   //CREATE
   @RequestMapping(method = RequestMethod.POST)
   @ResponseStatus(HttpStatus.CREATED)
-  public ResponseEntity<Admin> create(@RequestBody Admin admin) {
+  public ResponseEntity<Admin> createAdmin(@RequestBody Admin admin) {
     adminService.add(admin);
     return new ResponseEntity<>(admin, CREATED);
   }
-
+  //READ
   @GetMapping("/{id}")
   public ResponseEntity<Admin> FindAdmin(@PathVariable int id) {
     try {
@@ -47,5 +45,18 @@ public class UserRestController {
     return new ResponseEntity<>(new Admin("",""), NO_CONTENT);
   }
 
+  //UPDATE
+  @PutMapping("/{id}")
+  public ResponseEntity<Admin> updateAdmin(@RequestBody Admin admin) {
+    adminService.save(admin);
+    return new ResponseEntity<>(admin, OK);
+  }
+
+  //DELETE
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Admin> deleteAdmin(@PathVariable long id) {
+    adminService.remove(id);
+    return new ResponseEntity<>(OK);
+  }
 
 }

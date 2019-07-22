@@ -23,6 +23,11 @@ public class AdminService {
     public void add(Admin admin) {
         adminRepository.save(admin);
     }
-
+    public void save(Admin admin) {
+        adminRepository.save(admin);
+    }
+    public void remove(Long id) {
+        adminRepository.deleteById(id);
+    }
 
 }
