@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -27,21 +28,39 @@ public class FineRestController {
     private static final Logger LOGGER = LoggerFactory.getLogger(FineRestController.class);
 
     private final FineService fineService;
-    private AdminService adminService;
-    private ModelMapper modelMapper;
 
     @Autowired
-    public FineRestController(AdminService adminService, ModelMapper modelMapper, FineService fineService) {
-        this.modelMapper = modelMapper;
-        this.adminService = adminService;
+    public FineRestController(FineService fineService) {
         this.fineService = fineService;
     }
 
+    @PutMapping("/change/{id}")
+    public ResponseEntity<Fine> updateFine(@PathVariable Long id, @RequestParam("amount") double amount, @RequestParam("motivation") String motivation) {
+        if ((motivation == null) || (motivation.length() < 1))
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        Optional<Fine> fine = fineService.load(id);
+        if(fine.isPresent()){
+            fine.get().setAmount(amount);
+            fine.get().setUpdateAmountMotivation(motivation);
+            fineService.save(fine.get());
+            return new ResponseEntity<>(fine.get(), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+
+    }
 
     @RequestMapping(value = "approvefine/{id}", method = PUT)
-    public ResponseEntity<FineDTO[]> approveFine(@PathVariable int id) {
-        return null;
+    public ResponseEntity<Fine> approveFine(@PathVariable long id) {
+        Optional<Fine> fine = fineService.load(id);
+        if(fine.isPresent()){
+            fine.get().setApproved(true);
+            fineService.save(fine.get());
+            return new ResponseEntity<>(fine.get(), HttpStatus.OK);
+        }
+        return new ResponseEntity<Fine>(HttpStatus.NOT_FOUND);
     }
+
 
     @RequestMapping(value = "all", method = GET)
     public ResponseEntity<List<Fine>> getAllFines() {

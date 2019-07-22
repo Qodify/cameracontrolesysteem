@@ -6,17 +6,18 @@ import kdg.be.processor.domain.user.AdminDTO;
 import kdg.be.processor.frontend.exception.AdminNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import static org.springframework.http.HttpStatus.NO_CONTENT;
-import static org.springframework.http.HttpStatus.OK;
+import javax.validation.Valid;
+
+import static org.springframework.http.HttpStatus.*;
 
 @Component
 @RestController
+@RequestMapping("/api/admin")
 public class UserRestController {
 
   private AdminService adminService;
@@ -27,16 +28,24 @@ public class UserRestController {
     this.modelMapper = modelMapper;
     this.adminService = adminService;
   }
+  //CREATE
+  @RequestMapping(method = RequestMethod.POST)
+  @ResponseStatus(HttpStatus.CREATED)
+  public ResponseEntity<Admin> create(@RequestBody Admin admin) {
+    adminService.add(admin);
+    return new ResponseEntity<>(admin, CREATED);
+  }
 
-  @GetMapping("/admin/{id}")
-  public ResponseEntity<AdminDTO> FindAdmin(@PathVariable int id) {
+  @GetMapping("/{id}")
+  public ResponseEntity<Admin> FindAdmin(@PathVariable int id) {
     try {
       Admin admin = adminService.load((long) id).orElseThrow(AdminNotFoundException::new);
-      return new ResponseEntity<>(modelMapper.map(admin, AdminDTO.class), OK);
+      return new ResponseEntity<>(admin, OK);
     } catch (AdminNotFoundException e) {
       e.getMessage();
     }
-    //TODO: hoe moet ik dit oplossen?
-    return new ResponseEntity<>(modelMapper.map(new Admin("",""), AdminDTO.class), NO_CONTENT);
+    return new ResponseEntity<>(new Admin("",""), NO_CONTENT);
   }
+
+
 }

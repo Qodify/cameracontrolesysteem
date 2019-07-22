@@ -10,13 +10,19 @@ import java.util.Optional;
 @Component
 public class AdminService {
 
-  private final AdminRepository adminRepository;
+    private final AdminRepository adminRepository;
 
-  public AdminService(AdminRepository adminRepository) {
-    this.adminRepository = adminRepository;
-  }
+    public AdminService(AdminRepository adminRepository) {
+        this.adminRepository = adminRepository;
+    }
 
-  public Optional<Admin> load(Long id) {
-    return adminRepository.findById((id));
-  }
+    public Optional<Admin> load(Long id) {
+        return adminRepository.findById((id));
+    }
+
+    public void add(Admin admin) {
+        adminRepository.save(admin);
+    }
+
+
 }
