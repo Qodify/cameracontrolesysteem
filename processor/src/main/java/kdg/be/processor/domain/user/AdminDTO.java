@@ -1,27 +1,52 @@
 package kdg.be.processor.domain.user;
 
 public class AdminDTO {
-  private String username;
-  private String password;
+    private long id;
 
-  public AdminDTO(String username, String password) {
-    this.username = username;
-    this.password = password;
-  }
+    private String username;
+    private String password;
 
-  public String getUsername() {
-    return username;
-  }
+    public void setId(long id) {
+        this.id = id;
+    }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+    public void setRoles(String[] roles) {
+        this.roles = roles;
+    }
 
-  public String getPassword() {
-    return password;
-  }
+    private String[] roles;
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    public AdminDTO() {
+    }
+
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public AdminDTO(String name, String email, String username, String password, String[] roles) {
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String[] getRoles() {
+        return roles;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }

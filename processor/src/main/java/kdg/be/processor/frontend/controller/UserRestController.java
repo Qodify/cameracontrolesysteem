@@ -4,59 +4,62 @@ import kdg.be.processor.businesslogic.service.AdminService;
 import kdg.be.processor.domain.user.Admin;
 import kdg.be.processor.domain.user.AdminDTO;
 import kdg.be.processor.frontend.exception.AdminNotFoundException;
+import kdg.be.processor.frontend.exception.UnPersistableException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+import java.util.List;
+
 import static org.springframework.http.HttpStatus.*;
 
-@Component
 @RestController
-@RequestMapping("/api/admin")
+@RequestMapping("/api/user")
 public class UserRestController {
 
-  private AdminService adminService;
+    private final AdminService adminService;
+    private final ModelMapper modelMapper;
 
-  @Autowired
-  public UserRestController(AdminService adminService) {
-    this.adminService = adminService;
-  }
-  //CREATE
-  @RequestMapping(method = RequestMethod.POST)
-  @ResponseStatus(HttpStatus.CREATED)
-  public ResponseEntity<Admin> createAdmin(@RequestBody Admin admin) {
-    adminService.add(admin);
-    return new ResponseEntity<>(admin, CREATED);
-  }
-  //READ
-  @GetMapping("/{id}")
-  public ResponseEntity<Admin> FindAdmin(@PathVariable int id) {
-    try {
-      Admin admin = adminService.load((long) id).orElseThrow(AdminNotFoundException::new);
-      return new ResponseEntity<>(admin, OK);
-    } catch (AdminNotFoundException e) {
-      e.getMessage();
+    public UserRestController(final ModelMapper modelMapper, AdminService adminService) {
+        this.modelMapper = modelMapper;
+        this.adminService = adminService;
     }
-    return new ResponseEntity<>(new Admin("",""), NO_CONTENT);
-  }
 
-  //UPDATE
-  @PutMapping("/{id}")
-  public ResponseEntity<Admin> updateAdmin(@RequestBody Admin admin) {
-    adminService.save(admin);
-    return new ResponseEntity<>(admin, OK);
-  }
+    @GetMapping("/{username}")
+    public UserDetails getUser(@PathVariable String username) throws AdminNotFoundException {//same name no problem.    //@PathVariable(id) Long jos
+        return adminService.loadUserByUsername(username);
+    }
 
-  //DELETE
-  @DeleteMapping("/{id}")
-  public ResponseEntity<Admin> deleteAdmin(@PathVariable long id) {
-    adminService.remove(id);
-    return new ResponseEntity<>(OK);
-  }
 
+    @PostMapping("/change")
+    public ResponseEntity<UserDetails> changeAppUser(@RequestBody AdminDTO adminUserDTO) throws AdminNotFoundException, UnPersistableException {
+        return new ResponseEntity<>(adminService.update(modelMapper.map(adminUserDTO, Admin.class)), HttpStatus.CREATED);
+
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<UserDetails>> loadAll() throws AdminNotFoundException, UnPersistableException {
+        return new ResponseEntity<>(adminService.loadAll(), HttpStatus.CREATED);
+    }
+
+
+    @PostMapping("/create")
+    public ResponseEntity<UserDetails> createAppUser(@RequestBody AdminDTO adminUserDTO) throws UnPersistableException {
+        return new ResponseEntity<>(adminService.save(modelMapper.map(adminUserDTO, Admin.class)), HttpStatus.CREATED);
+
+    }
+
+    @PostMapping("/delete")
+    public ResponseEntity deleteAppUser(@RequestBody AdminDTO adminUserDTO) {
+        adminService.delete(modelMapper.map(adminUserDTO, Admin.class));
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }
+
+

@@ -2,37 +2,64 @@ package kdg.be.processor.domain.user;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Data
 @Entity
+@Table(name = "ADMIN")
 public class Admin {
-  @Id
-  @GeneratedValue
-  private Long Id;
-  private String username;
-  private String password;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private long id;
 
-  public Admin(String username, String password) {
-    this.username = username;
-    this.password = password;
-  }
+    @Column(length=100, nullable = false)
+    private String username;
+    @Column( length=100, nullable = false)
+    private String password;
 
-  public String getUsername() {
-    return username;
-  }
+    public void setId(long id) {
+        this.id = id;
+    }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+    public String[] getRoles() {
+        return roles;
+    }
 
-  public String getPassword() {
-    return password;
-  }
+    public void setRoles(String[] roles) {
+        this.roles = roles;
+    }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    @Column(name="roles")
+    private String[] roles;
+
+    public Admin() {
+    }
+
+    public Admin(String username, String password, String[] roles) {
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
 }

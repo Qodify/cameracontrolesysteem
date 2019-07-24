@@ -4,6 +4,8 @@ import kdg.be.processor.businesslogic.service.AdminService;
 import kdg.be.processor.businesslogic.service.FineService;
 import kdg.be.processor.domain.fine.Fine;
 import kdg.be.processor.domain.fine.FineDTO;
+import kdg.be.processor.frontend.exception.FineNotFoundException;
+import kdg.be.processor.frontend.exception.UnPersistableException;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,61 +23,42 @@ import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
-@Component
 @RestController
 @RequestMapping("/api/fine")
 public class FineRestController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(FineRestController.class);
-
-    private final FineService fineService;
-
     @Autowired
-    public FineRestController(FineService fineService) {
-        this.fineService = fineService;
+    private FineService fineService;
+    private final ModelMapper modelMapper;
+
+    public FineRestController(final ModelMapper modelMapper) {
+        this.modelMapper = modelMapper;
     }
 
-    @PutMapping("/change/{id}")
-    public ResponseEntity<Fine> updateFine(@PathVariable Long id, @RequestParam("amount") double amount, @RequestParam("motivation") String motivation) {
-        if ((motivation == null) || (motivation.length() < 1))
-            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-        Optional<Fine> fine = fineService.load(id);
-        if(fine.isPresent()){
-            fine.get().setAmount(amount);
-            fine.get().setUpdateAmountMotivation(motivation);
-            fineService.save(fine.get());
-            return new ResponseEntity<>(fine.get(), HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-
+    @GetMapping("/{id}")
+    public FineDTO getFine(@PathVariable Long id) throws FineNotFoundException {
+        return modelMapper.map(fineService.load(id), FineDTO.class);
     }
 
-    @RequestMapping(value = "approvefine/{id}", method = PUT)
-    public ResponseEntity<Fine> approveFine(@PathVariable long id) {
-        Optional<Fine> fine = fineService.load(id);
-        if(fine.isPresent()){
-            fine.get().setApproved(true);
-            fineService.save(fine.get());
-            return new ResponseEntity<>(fine.get(), HttpStatus.OK);
-        }
-        return new ResponseEntity<Fine>(HttpStatus.NOT_FOUND);
+    @GetMapping("/all")
+    public FineDTO[] getFine() {//same name no problem.    //@PathVariable(id) Long jos
+        return modelMapper.map(fineService.loadAll(), FineDTO[].class);
+    }
+
+    @GetMapping("/allow/{id}")
+    public ResponseEntity<FineDTO> allowFine(@PathVariable Long id) throws FineNotFoundException, UnPersistableException {
+        return new ResponseEntity<>(modelMapper.map(fineService.accept(id), FineDTO.class), HttpStatus.CREATED);
     }
 
 
-    @RequestMapping(value = "all", method = GET)
-    public ResponseEntity<List<Fine>> getAllFines() {
-        return new ResponseEntity<>(fineService.loadAll(), OK);
+    @PostMapping("/changefine")
+    public ResponseEntity<FineDTO> changeFine(@RequestBody FineDTO fineDTO) throws FineNotFoundException, UnPersistableException {
+        return new ResponseEntity<>(modelMapper.map(fineService.change( modelMapper.map(fineDTO, Fine.class)), FineDTO.class), HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/fines/between", method = GET)
-    public ResponseEntity<List<Fine>> findAll(
-            @RequestBody
-            @RequestParam(name = "startDate", required = false) String startDate,
-            @RequestParam(name = "endDate", required = false) String endDate) {
-
-        return new ResponseEntity<>(
-                fineService.getFinesFilteredByDate(startDate, endDate), HttpStatus.OK);
+    //http://localhost:9090/api/fine/fromtill?from=2018-10-16T19:01:18.555141&till=2018-10-31T19:05:18.555141
+    @GetMapping("/fromtill")
+    public FineDTO[] getFine(@RequestParam String startDate, @RequestParam String endDate) {
+        List<Fine> x =fineService.getFinesFilteredByDate(startDate,endDate);
+        return modelMapper.map(x, FineDTO[].class);
     }
-
-
 }

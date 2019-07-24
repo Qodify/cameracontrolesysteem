@@ -16,4 +16,6 @@ public interface AdminRepository extends JpaRepository<Admin, Long> {
 
   @Override
   <S extends Admin> S save(S entity);
+
+  Admin findByUsername(String userName);
 }
