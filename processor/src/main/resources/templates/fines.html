@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="icon" th:href="@{/images/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" media="screen"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" media="screen"/>
+
+    <!-- Scripts -->
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"/>
+<div class="container"><h3>List of Fines</h3>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <table style="width:100%;float:left">
+        <th:block th:each="fine : ${boetes}">
+            <tr>
+                <th>Id</th>
+                <th>Amount</th>
+                <th>Justification</th>
+                <th>isApproved</th>
+                <th>Violation</th>
+            </tr>
+            <tr>
+                <td th:text="${fine.id}"> id</td>
+                <td th:text="${fine.amount}"> amount</td>
+                <td th:text="${fine.justification}"> justification</td>
+                <td th:text="${fine.isApproved}"> isApproved</td>
+                <td th:text="${fine.offense}"> Offense</td>
+            </tr>
+        </th:block>
+        <!--  Overtreding:<span th:text="${fine.violation}"> violation </span> -->
+    </table>
+</div>
+<footer th:insert="fragments/footer.html :: footer"/>
+
+</body>
+</html>

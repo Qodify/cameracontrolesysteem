@@ -2,6 +2,7 @@ package kdg.be.processor.businesslogic.listener;
 
 import kdg.be.processor.businesslogic.adapter.CameraServiceAdapter;
 import kdg.be.processor.businesslogic.adapter.LicensePlateServiceAdapter;
+import kdg.be.processor.businesslogic.service.PropertyService;
 import kdg.be.processor.businesslogic.service.SpeedingOffenseService;
 import kdg.be.processor.domain.cameramessage.CameraMessage;
 import kdg.be.processor.domain.offense.Offense;
@@ -26,6 +27,7 @@ public class SpeedingOffenseListener implements OffenseListener {
     private LicensePlateServiceAdapter licensePlateServiceAdapter;
     private CameraServiceAdapter cameraServiceAdapter;
     private final SpeedingOffenseService speedingOffenseService;
+    private PropertyService propertyService;
     private Map<CameraMessage, Integer> retryMap;
     private static final Logger LOGGER = LoggerFactory.getLogger(SpeedingOffenseListener.class);
     @Value("${filePath}")
@@ -34,12 +36,13 @@ public class SpeedingOffenseListener implements OffenseListener {
     @Autowired
     public SpeedingOffenseListener(LicensePlateServiceAdapter licensePlateServiceAdapter,
                                    CameraServiceAdapter cameraServiceAdapter,
-                                   SpeedingOffenseService speedingOffenseService) {
+                                   SpeedingOffenseService speedingOffenseService, PropertyService propertyService) {
 
         this.licensePlateServiceAdapter = licensePlateServiceAdapter;
         this.cameraServiceAdapter = cameraServiceAdapter;
         this.speedingOffenseService = speedingOffenseService;
         retryMap = new HashMap<>();
+        this.propertyService = propertyService;
     }
 
     @Override
@@ -63,7 +66,7 @@ public class SpeedingOffenseListener implements OffenseListener {
         FileWriter fw;
         if (!retryMap.isEmpty()) {
             for (CameraMessage cm : retryMap.keySet()) {
-                if (cm.getRetries() > 1) {
+                if (cm.getRetries() > Integer.parseInt(propertyService.get("retriesDelay"))) {
                     try {
                         LOGGER.info("write failed msg to file!: " + cm.toString());
                         fw = new FileWriter(retryfilepath);
@@ -73,7 +76,7 @@ public class SpeedingOffenseListener implements OffenseListener {
                         e.printStackTrace();
                     }
                     retryMap.remove(cm);
-                } else {
+                } else{
                     onMessageReceived(cm);
                     cm.retry();
                     retryMap.replace(cm, cm.getRetries());

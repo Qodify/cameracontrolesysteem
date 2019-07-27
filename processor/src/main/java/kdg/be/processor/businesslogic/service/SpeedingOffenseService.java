@@ -21,11 +21,6 @@ import java.util.*;
 public class SpeedingOffenseService implements OffenseService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SpeedingOffenseService.class);
-
-    @Value("${speedingFineFactor:30}")
-    private double speedingFineFactor;
-
-
     private Map<String, CameraPercept> cameraMessages;
 
     @Autowired

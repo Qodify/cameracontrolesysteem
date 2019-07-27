@@ -1,4 +1,4 @@
-package kdg.be.processor.domain.user;
+package kdg.be.processor.frontend.dto;
 
 public class AdminDTO {
     private long id;

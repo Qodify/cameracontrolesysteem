@@ -1,4 +1,4 @@
-package kdg.be.processor.domain.offense;
+package kdg.be.processor.frontend.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

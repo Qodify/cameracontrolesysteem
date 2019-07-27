@@ -1,6 +1,8 @@
 package kdg.be.processor.domain.cameramessage;
 
 
+import kdg.be.processor.frontend.dto.CameraMessageDTO;
+
 import java.time.LocalDateTime;
 
 public class CameraMessage {

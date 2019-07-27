@@ -24,11 +24,8 @@ import java.util.Optional;
 public class FineService {
     private static final Logger LOGGER = LoggerFactory.getLogger(FineService.class);
 
-    @Value("${emissionFineFactor:1.0}")
-    private double emissionFineFactor;
-
-    @Value("${speedingFineFactor:1.0}")
-    private double speedingFineFactor;
+    @Autowired
+    private PropertyService prop;
 
     private FineRepository fineRepository;
     private DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
@@ -74,14 +71,6 @@ public class FineService {
         return save(f);
     }
 
-    public double getEmissionFineFactor() {
-        return emissionFineFactor;
-    }
-
-    public double getSpeedingFineFactor() {
-        return speedingFineFactor;
-    }
-
     public List<Fine> loadAll() {
         return fineRepository.findAll();
     }
@@ -90,11 +79,11 @@ public class FineService {
     public void add(Offense o) {
         if (o instanceof EmissionOffense)
             LOGGER.info(fineRepository.save(new Fine((EmissionOffense) o,
-                    emissionFineFactor, LocalDateTime.now())).toString());
+                    Integer.parseInt(prop.get("emissionFineFactor")), LocalDateTime.now())).toString());
         else {
             LOGGER.info(fineRepository.save(new Fine((SpeedingOffense) o,
                     (((SpeedingOffense) o).getCarSpeed() - ((SpeedingOffense) o).getSpeedLimit())
-                            * speedingFineFactor, LocalDateTime.now())).toString());
+                            * Integer.parseInt(prop.get("speedFineFactor")), LocalDateTime.now())).toString());
         }
     }
 

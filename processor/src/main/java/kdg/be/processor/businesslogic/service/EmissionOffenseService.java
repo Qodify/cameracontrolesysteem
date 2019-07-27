@@ -9,6 +9,7 @@ import kdg.be.processor.domain.perception.CameraPercept;
 import kdg.be.processor.domain.perception.LicensePlatePercept;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Component;
@@ -24,15 +25,12 @@ public class EmissionOffenseService implements OffenseService {
     private static final Logger LOGGER = LoggerFactory.getLogger(EmissionOffenseService.class);
 
     private List<EmissionOffense> emissionOffenseList;
+    private final PropertyService propertyService;
 
-    private final FineService fineService;
 
-    @Value(value = "${graceperiodinseconds}")
-    private Long gracePeriodInSeconds;
-
-    public EmissionOffenseService(FineService fineService) {
+    public EmissionOffenseService(PropertyService propertyService) {
         emissionOffenseList = new LinkedList<>();
-        this.fineService = fineService;
+        this.propertyService = propertyService;
     }
 
     /**
@@ -51,9 +49,8 @@ public class EmissionOffenseService implements OffenseService {
                 emissionOffenseList.add(o);
                 for (EmissionOffense e : emissionOffenseList) {
                     if (e.getLicenseplate().equals(o.getLicenseplate())) {
-                        //TODO
-                            if (Duration.between(e.getTimestamp(), o.getTimestamp()).toMillis() / 1000 < gracePeriodInSeconds)
-                                return Optional.empty();
+                        if (Duration.between(e.getTimestamp(), o.getTimestamp()).toMillis() / 1000 < Integer.parseInt(propertyService.get("emissionTimeDelay")))
+                            return Optional.empty();
 
                     }
                 }

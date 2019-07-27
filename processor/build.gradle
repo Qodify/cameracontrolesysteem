@@ -29,9 +29,9 @@ dependencies {
     runtime('org.springframework.boot:spring-boot-devtools')
     compile("org.springframework.boot:spring-boot-starter-amqp")
     compile("com.h2database:h2")
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-starter-security")
-    compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    //compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")
     
     compile('org.webjars:webjars-locator-core:0.35')
     compile('org.webjars:bootstrap:4.1.3')

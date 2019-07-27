@@ -48,7 +48,7 @@ public class AdminService implements UserDetailsService {
         if (admin.getUsername().equalsIgnoreCase(username)) {
             return buildUser(admin);
         } else {
-            throw new UsernameNotFoundException("No valid user");
+            throw new UsernameNotFoundException("Not a valid user");
         }
     }
 

@@ -1,6 +1,7 @@
-package kdg.be.processor.domain.cameramessage;
+package kdg.be.processor.frontend.dto;
 
 
+import kdg.be.processor.domain.cameramessage.CameraMessage;
 import lombok.Data;
 
 

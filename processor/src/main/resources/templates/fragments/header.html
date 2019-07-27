@@ -1,0 +1,47 @@
+    <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:fragment="header">
+    <meta charset="UTF-8"/>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #483D8B;
+        }
+
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: #6A5ACD;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div th:fragment="header">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/fine/fines">Fines</a></li>
+            <li><a href="/property/props"> Global Properties</a></li>
+         <li sec:authorize="isAuthenticated()">
+                <a href="/logout">logout</a>
+            </li>
+        <li  sec:authorize="isAnonymous()">
+            <a href="/login">login</a>
+        </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

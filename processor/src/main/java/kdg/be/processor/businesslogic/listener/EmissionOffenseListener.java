@@ -3,6 +3,7 @@ package kdg.be.processor.businesslogic.listener;
 import kdg.be.processor.businesslogic.adapter.CameraServiceAdapter;
 import kdg.be.processor.businesslogic.adapter.LicensePlateServiceAdapter;
 import kdg.be.processor.businesslogic.service.EmissionOffenseService;
+import kdg.be.processor.businesslogic.service.PropertyService;
 import kdg.be.processor.domain.cameramessage.CameraMessage;
 import kdg.be.processor.domain.offense.Offense;
 import org.slf4j.Logger;
@@ -24,6 +25,7 @@ public class EmissionOffenseListener implements OffenseListener {
     private LicensePlateServiceAdapter licensePlateServiceAdapter;
     private CameraServiceAdapter cameraServiceAdapter;
     private final EmissionOffenseService emissionOffenseService;
+    private final PropertyService propertyService;
     private AbstractMap<CameraMessage, Integer> retryMap;
     @Value("${filePath}")
     private String retryfilepath;
@@ -33,10 +35,12 @@ public class EmissionOffenseListener implements OffenseListener {
     @Autowired
     public EmissionOffenseListener(LicensePlateServiceAdapter licensePlateServiceAdapter,
                                    CameraServiceAdapter cameraServiceAdapter,
-                                   EmissionOffenseService emissionOffenseService) {
+                                   EmissionOffenseService emissionOffenseService,
+                                   PropertyService propertyService) {
         this.licensePlateServiceAdapter = licensePlateServiceAdapter;
         this.cameraServiceAdapter = cameraServiceAdapter;
         this.emissionOffenseService = emissionOffenseService;
+        this.propertyService = propertyService;
         retryMap = new HashMap<>();
     }
 
@@ -58,7 +62,7 @@ public class EmissionOffenseListener implements OffenseListener {
         FileWriter fw;
         if (!retryMap.isEmpty()) {
             for (CameraMessage cm : retryMap.keySet()) {
-                if (cm.getRetries() > 1) {
+                if (cm.getRetries() > Integer.parseInt(propertyService.get("retriesDelay"))) {
                     try {
                         LOGGER.info("write failed msg to file!: " + cm.toString());
                         fw = new FileWriter(retryfilepath);

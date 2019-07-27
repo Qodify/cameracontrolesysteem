@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import kdg.be.processor.domain.cameramessage.CameraMessage;
-import kdg.be.processor.domain.cameramessage.CameraMessageDTO;
+import kdg.be.processor.frontend.dto.CameraMessageDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
