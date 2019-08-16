@@ -51,8 +51,6 @@ public class Receiver {
             CameraMessage cm = new CameraMessage(cmDTO);
 
             LOGGER.info("Parced <" + cm.toString() + ">");
-            //TODO: niet direct naar
-            // eeeuh waarom niet direct? ik ben het vergeten
             notifier.notifyListeners(cm);
 
         } catch (JsonParseException e) {

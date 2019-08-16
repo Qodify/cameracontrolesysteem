@@ -36,7 +36,7 @@ public class AdminService implements UserDetailsService {
     }
 
     //CREATE
-    public UserDetails save(Admin admin) /*throws UnableToPersistException */ {
+    public UserDetails save(Admin admin) throws UnPersistableException {
         admin.setPassword(encoder.encode(admin.getPassword()));
         return buildUser(adminRepository.save(admin));
     }

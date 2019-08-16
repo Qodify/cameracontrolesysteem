@@ -14,44 +14,41 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/fine")
+@RequestMapping("/api/fines")
 public class FineRestController {
-    @Autowired
-    private FineService fineService;
+    private final FineService fineService;
     private final ModelMapper modelMapper;
 
-    public FineRestController(final ModelMapper modelMapper) {
+    public FineRestController(final ModelMapper modelMapper, FineService fineService) {
         this.modelMapper = modelMapper;
+        this.fineService = fineService;
     }
 
 
     @GetMapping("/{id}")
-    public FineDTO getFine(@PathVariable Long id) throws FineNotFoundException {
-        return modelMapper.map(fineService.load(id), FineDTO.class);
+    public ResponseEntity<FineDTO> getFine(@PathVariable Long id) throws FineNotFoundException {
+        return new ResponseEntity<>(modelMapper.map(fineService.load(id), FineDTO.class), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping()
     public FineDTO[] getFine() {//same name no problem.    //@PathVariable(id) Long jos
         return modelMapper.map(fineService.loadAll(), FineDTO[].class);
     }
 
-    @GetMapping("/allow/{id}")
-    public ResponseEntity<FineDTO> allowFine(@PathVariable Long id) throws FineNotFoundException, UnPersistableException {
-        return new ResponseEntity<>(modelMapper.map(fineService.accept(id), FineDTO.class), HttpStatus.CREATED);
+    @PutMapping("/{id}")
+    public ResponseEntity<Fine> changeFine(@PathVariable Long id) throws FineNotFoundException, UnPersistableException {
+        return new ResponseEntity<>(fineService.load(id), HttpStatus.CREATED);
     }
 
-
-    @PostMapping("/changefine")
-    public ResponseEntity<FineDTO> changeFine(@RequestBody FineDTO fineDTO) throws FineNotFoundException, UnPersistableException {
-        return new ResponseEntity<>(
-                modelMapper.map(fineService.change(modelMapper.map(fineDTO, Fine.class)), FineDTO.class),
-                HttpStatus.CREATED);
+    @PutMapping("/{id}/allow")
+    public ResponseEntity<Fine> allowFine(@PathVariable Long id) throws FineNotFoundException, UnPersistableException {
+        return new ResponseEntity<>(fineService.accept(id), HttpStatus.CREATED);
     }
 
     //http://localhost:9090/api/fine/fromtill?from=2018-10-16T19:01:18.555141&till=2018-10-31T19:05:18.555141
     @GetMapping("/fromtill")
     public FineDTO[] getFine(@RequestParam String startDate, @RequestParam String endDate) {
-        List<Fine> x =fineService.getFinesFilteredByDate(startDate,endDate);
+        List<Fine> x = fineService.getFinesFilteredByDate(startDate, endDate);
         return modelMapper.map(x, FineDTO[].class);
     }
 }

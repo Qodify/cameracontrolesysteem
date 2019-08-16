@@ -77,13 +77,18 @@ public class FineService {
 
 
     public void add(Offense o) {
+        LOGGER.info(prop.get("speedFineFactor"));
+        LOGGER.info(prop.get("emissionFineFactor"));
+
         if (o instanceof EmissionOffense)
-            LOGGER.info(fineRepository.save(new Fine((EmissionOffense) o,
-                    Integer.parseInt(prop.get("emissionFineFactor")), LocalDateTime.now())).toString());
+            LOGGER.info(fineRepository.save(
+                    new Fine((EmissionOffense) o,
+                    Double.parseDouble(prop.get("emissionFineFactor")), LocalDateTime.now())).toString());
         else {
+            LOGGER.debug(prop.get("speedFineFactor"));
             LOGGER.info(fineRepository.save(new Fine((SpeedingOffense) o,
                     (((SpeedingOffense) o).getCarSpeed() - ((SpeedingOffense) o).getSpeedLimit())
-                            * Integer.parseInt(prop.get("speedFineFactor")), LocalDateTime.now())).toString());
+                            * Double.parseDouble(prop.get("speedFineFactor")), LocalDateTime.now())).toString());
         }
     }
 

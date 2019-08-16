@@ -20,8 +20,11 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private AdminRepository adminRepository;
+    private final AdminRepository adminRepository;
+
+    public WebSecurityConfig(AdminRepository adminRepository) {
+        this.adminRepository = adminRepository;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -32,6 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/").permitAll()
                 .antMatchers("/api/**").permitAll()
                 .antMatchers("/webjars/**").permitAll()
+                .antMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -49,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public UserDetailsService userDetailsServiceBean() throws Exception {
+    public UserDetailsService userDetailsServiceBean() {
         return new AdminService(adminRepository, passwordEncoder());
     }
 

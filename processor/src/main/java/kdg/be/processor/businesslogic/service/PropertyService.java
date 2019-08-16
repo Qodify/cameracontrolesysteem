@@ -15,12 +15,13 @@ import java.util.Map;
 @Transactional
 public class PropertyService {
 
-    @Autowired
-    private PropertyRepository propertyRepository;
+    private final PropertyRepository propertyRepository;
 
-    public PropertyService() {
+    public PropertyService(PropertyRepository propertyRepository) {
+        this.propertyRepository = propertyRepository;
     }
 
+    //CREATE
     public Property save(Property property) throws UnPersistableException {
         try {
             return propertyRepository.save(property);
@@ -29,18 +30,19 @@ public class PropertyService {
         }
     }
 
-    public String get(String prop) {
-        return propertyRepository.getOne(prop).toString();
-    }
-
-
+    //CREATE
     public void save(Map<String, String> prop) throws UnPersistableException {
         for (Map.Entry<String, String> entry : prop.entrySet()) {
             save(new Property(entry.getKey(), entry.getValue()));
         }
-
     }
 
+    //READ
+    public String get(String prop) {
+        return propertyRepository.getOne(prop).getValue();
+    }
+
+    //READ
     public HashMap<String, String> getAll() {
         HashMap<String, String> map = new HashMap<>();
         for (Property p : propertyRepository.findAll())

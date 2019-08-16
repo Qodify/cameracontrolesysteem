@@ -1,7 +1,6 @@
 package kdg.be.processor.frontend.controller.mvc;
 
 
-
 import kdg.be.processor.businesslogic.service.PropertyService;
 import kdg.be.processor.frontend.dto.PropertiesDTO;
 import kdg.be.processor.frontend.exception.UnPersistableException;
@@ -17,21 +16,19 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/property")
 public class PropertyMvcController {
-    @Autowired
-    private PropertyService ps;
+    private final PropertyService ps;
 
-    private final ModelMapper modelMapper;
 
-    public PropertyMvcController(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
+    public PropertyMvcController(PropertyService ps) {
+        this.ps = ps;
     }
 
     @GetMapping("/props")
-    public ModelAndView properties(){
-        return new ModelAndView("props","map", new PropertiesDTO(ps.getAll()));
+    public ModelAndView properties() {
+        return new ModelAndView("props", "map", new PropertiesDTO(ps.getAll()));
     }
 
-    @RequestMapping(value = "/props.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/props.save", method = RequestMethod.POST)
     public String postProperties(@ModelAttribute PropertiesDTO map) throws UnPersistableException {
         ps.save(map.getProp());
         return "redirect:props";

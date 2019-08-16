@@ -11,7 +11,8 @@
     <title>Welcome</title>
 </head>
 <body>
-<header th:insert="fragments/header.html :: header"/>
+
+<header th:insert="fragments/header.html :: header"></header>
 <div class="container"><h3>List of Fines</h3>
     <style>
         table, th, td {
@@ -26,7 +27,7 @@
                 <th>Amount</th>
                 <th>Justification</th>
                 <th>isApproved</th>
-                <th>Violation</th>
+                <th>Offense</th>
             </tr>
             <tr>
                 <td th:text="${fine.id}"> id</td>
@@ -36,10 +37,9 @@
                 <td th:text="${fine.offense}"> Offense</td>
             </tr>
         </th:block>
-        <!--  Overtreding:<span th:text="${fine.violation}"> violation </span> -->
     </table>
 </div>
-<footer th:insert="fragments/footer.html :: footer"/>
+<footer class="footer" th:insert="fragments/footer.html :: footer"></footer>
 
 </body>
 </html>

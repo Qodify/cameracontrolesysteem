@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserRestController {
 
     private final AdminService adminService;
@@ -30,26 +30,25 @@ public class UserRestController {
         return adminService.loadUserByUsername(username);
     }
 
-
-    @PostMapping("/change")
+    @PutMapping()
     public ResponseEntity<UserDetails> changeAppUser(@RequestBody AdminDTO adminUserDTO) throws AdminNotFoundException, UnPersistableException {
         return new ResponseEntity<>(adminService.update(modelMapper.map(adminUserDTO, Admin.class)), HttpStatus.CREATED);
 
     }
 
-    @GetMapping("/all")
+    @GetMapping()
     public ResponseEntity<List<UserDetails>> loadAll() throws AdminNotFoundException, UnPersistableException {
         return new ResponseEntity<>(adminService.loadAll(), HttpStatus.CREATED);
     }
 
 
-    @PostMapping("/create")
+    @PostMapping()
     public ResponseEntity<UserDetails> createAppUser(@RequestBody AdminDTO adminUserDTO) throws UnPersistableException {
         return new ResponseEntity<>(adminService.save(modelMapper.map(adminUserDTO, Admin.class)), HttpStatus.CREATED);
 
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping()
     public ResponseEntity deleteAppUser(@RequestBody AdminDTO adminUserDTO) {
         adminService.delete(modelMapper.map(adminUserDTO, Admin.class));
         return new ResponseEntity(HttpStatus.OK);

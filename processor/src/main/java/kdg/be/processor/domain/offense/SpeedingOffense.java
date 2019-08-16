@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 
 @Entity(name = "speeding_offenses")
 @DiscriminatorValue("S")
-
 public class SpeedingOffense extends Offense {
 
 

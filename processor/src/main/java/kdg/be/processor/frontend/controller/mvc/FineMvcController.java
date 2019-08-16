@@ -24,6 +24,7 @@ public class FineMvcController {
         this.fineService = fineService;
         this.modelMapper = modelMapper;
     }
+
     @RequestMapping("/login.html")
     public String login() {
         return "login.html";
@@ -31,8 +32,8 @@ public class FineMvcController {
 
 
     @GetMapping("/fines")
-    public ModelAndView Fines(){
-        return new ModelAndView("fines","boetes",modelMapper.map(fineService.loadAll().toArray(new Fine[0]), FineDTO[].class));
+    public ModelAndView Fines() {
+        return new ModelAndView("fines", "boetes", modelMapper.map(fineService.loadAll().toArray(new Fine[0]), FineDTO[].class));
     }
 
     @GetMapping("/allow/{id}")
@@ -43,7 +44,7 @@ public class FineMvcController {
 
     @RequestMapping(value = "/changefine", method = RequestMethod.POST)
     public ModelAndView changeFine(FineDTO fineDTO) throws FineNotFoundException, UnPersistableException {
-        fineService.change( modelMapper.map(fineDTO, Fine.class));
+        fineService.change(modelMapper.map(fineDTO, Fine.class));
         return new ModelAndView("index");
     }
 }

@@ -5,7 +5,4 @@ public class UnPersistableException extends Exception {
         super(message);
     }
 
-    public UnPersistableException(Throwable cause) {
-        super(cause);
-    }
 }

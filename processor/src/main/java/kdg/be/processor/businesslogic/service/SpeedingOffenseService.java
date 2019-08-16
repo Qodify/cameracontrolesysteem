@@ -36,9 +36,9 @@ public class SpeedingOffenseService implements OffenseService {
 
             if (cameraMessages.containsKey(plateId)) {
 
-                Offense o = calcSpeedingOffense(cameraMessages.remove(plateId), cp.get(), plateId);
+                Optional<Offense> o = calcSpeedingOffense(cameraMessages.remove(plateId), cp.get(), plateId);
 
-                if (o != null) return Optional.of(o);
+                if (o.isPresent()) return o;
             } else if (cameraPercept.getSpeedLimit() != 0) {
                 cameraMessages.put(plateId, cameraPercept);
             }
@@ -51,15 +51,16 @@ public class SpeedingOffenseService implements OffenseService {
     }
 
 
-    private Offense calcSpeedingOffense(CameraPercept cp1, CameraPercept cp2, String plateId) {
+    private Optional<Offense> calcSpeedingOffense(CameraPercept cp1, CameraPercept cp2, String plateId) {
         double speedLimit = cp1.getSpeedLimit();
         double distance = cp1.getDistance();
         double seconds = (Duration.between(cp1.getTimestamp(), cp2.getTimestamp()).toMillis()) / 1000.0;
 
         double measuredSpeed = (distance / seconds) / 3.6;
         if (measuredSpeed > speedLimit)
-            return new SpeedingOffense(plateId, cp1.getCameraId(), cp2.getCameraId(), measuredSpeed, speedLimit, cp1.getTimestamp());
-        //null gets handled in same class
-        return null;
+            return Optional.of(new SpeedingOffense(plateId, cp1.getCameraId(), cp2.getCameraId(), measuredSpeed, speedLimit, cp1.getTimestamp()));
+
+        //empty gets handled in same class
+        return Optional.empty();
     }
 }
