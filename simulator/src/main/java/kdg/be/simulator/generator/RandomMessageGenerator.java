@@ -19,8 +19,9 @@ import java.util.Random;
 public class RandomMessageGenerator implements MessageGenerator {
 
     private Random r;
-    @Value("${rIdbound:1000}")
-    private Integer rIdBound;
+    @Value("${pauseBetweenRandomMsgGeneration}")
+    private Integer pauseBetweenRandomMsgGeneration;
+    @Value("${cameraIdBound:1000}")
     private int cameraIdBound;
     private List<GeneratorListener> listeners;
 
@@ -40,8 +41,10 @@ public class RandomMessageGenerator implements MessageGenerator {
         String randomLicensePlate = String.format("%d-%s%s%s-%d%d%d",
                 r.nextInt(9) + 1, rndChar(), rndChar(), rndChar(),
                 r.nextInt(9) + 1, r.nextInt(9) + 1, r.nextInt(9) + 1);
+
         notifyListeners(new CameraMessage(r.nextInt(cameraIdBound) + 1, randomLicensePlate, LocalDateTime.now()));
-        Thread.sleep(r.nextInt(3000));
+
+        Thread.sleep(r.nextInt(pauseBetweenRandomMsgGeneration));
         generate();
 
     }
